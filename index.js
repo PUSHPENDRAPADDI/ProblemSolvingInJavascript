@@ -239,3 +239,169 @@
 
 // console.log(eval(array.join('+')));
 
+
+// Rotate Array by kth
+
+
+// const arr = [1, 2, 3, 4, 5, 6]
+// let k = 2
+
+// k = k % arr.length
+// while (k > 0) {
+//   const temp = arr[0]
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     arr[i] = arr[i + 1]
+//   }
+//   arr[arr.length - 1] = temp
+//   k--
+// }
+
+// k = k % arr.length
+
+// let temp = arr.slice(arr.length - k - 2)
+// for (let i = arr.length - 1; i > k+1; i--) {
+//   arr[i] = arr[i - k - 2]
+// }
+
+// for (let i = 0; i <= k; i++) {
+//   arr[i] = temp[i]
+// }
+
+
+// let result = []
+// for (let i = k; i < arr.length; i++) {
+//   debugger
+//   result[i - k] = arr[i]
+// }
+// for (let i = 0; i < k; i++) {
+//   result[i + k + 2] = arr[i]
+// }
+
+// console.log(arr);
+
+// const arr = [1,2,3,4,5]
+
+// let sum = 0;
+// let avg
+
+// debugger
+// for (let i = 0; i < arr.length; i++) {
+//     sum = sum + arr[i]
+// }
+
+// avg = sum / arr.length
+
+// const sum = arr.reduce((total, ele) => total + ele)
+// const avg = sum / arr.length
+
+// console.log(avg);
+
+// const arr = [7,2,5,1,9]
+// arr.sort((a,b) => a-b)
+// // const sort = arr.sort((a,b) => a-b)
+// const mid = Math.floor(arr.length/2)
+// let median = 0;
+
+// debugger
+// if (arr.length % 2 === 0) {
+//     median = ((arr[mid] + arr[mid - 1]) / 2)
+// }else{
+//     median = arr[mid]
+// }
+
+
+
+// console.log(median);
+
+
+
+
+// Remove Duplicates in-place from Sorted Array
+
+// const nums = [0,0,0,1,1,1,2,2,2,3,3,5,5,6,6,7,7]
+
+// let set = new Set(nums)
+// let unq = Array.from(set)
+
+// for (let i = 0; i < unq.length; i++) {
+//     nums[i] = unq[i]
+// }
+// debugger
+
+// const count = nums.length - unq.length
+// for (let i = 0; i < count; i++) {
+//     nums.pop()
+// }
+// console.log(nums);
+
+
+
+
+
+
+// let unique = 0
+
+// for (let i = 0; i < nums.length; i++) {
+//     if(nums[i] !== nums[unique]){
+//         unique++;
+//         nums[unique] = nums[i]
+//     }
+// }
+// unique++;
+
+
+
+// console.log(nums.slice(0, unique));
+
+
+
+
+
+
+
+// Remove Duplicates From an Unsorted Array
+
+// let unsorted = [3,1,2,2,1,4,5,4]
+// const temp = unsorted
+
+// for (let i = 0; i < unsorted.length; i++) {
+//     if(temp[i]){
+//         for (let j = i+1; j < unsorted.length; j++) {
+//             if(unsorted[i] === unsorted[j]){
+//                 temp[j] = true
+//             }
+//         }
+//     }
+// }
+
+// unsorted = unsorted.filter(ele => ele !== true)
+
+
+// console.log(unsorted);
+
+// const set = new Set();
+// let result = []
+
+
+
+
+
+
+
+
+// for (let i = 0; i < unsorted.length; i++) {
+//     debugger
+//     if(!set.has(unsorted[i])){
+//         set.add(unsorted[i])
+//         result.push(unsorted[i])
+//     }
+// }
+
+// debugger
+// for (let i = 0; i < unsorted.length; i++) {
+//     if(!result.includes(unsorted[i])){
+//         result.push(unsorted[i])
+//     }
+// }
+
+// console.log(result);
