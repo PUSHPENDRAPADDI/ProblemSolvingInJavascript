@@ -405,3 +405,117 @@
 // }
 
 // console.log(result);
+
+
+
+// Adding Element in an Array
+
+// const arr = [1,2,3,4,5]
+// n= 8
+// index = 3
+// for first index 
+
+// for (let i = arr.length-1; i >= 0; i--) {
+//     arr[i + 1] = arr[i]
+// }
+// arr[0] = n 
+
+// arr.unshift(n)
+
+// for last index
+
+// arr[arr.length] = n
+// arr.push(n,5,4,3,4,34)
+
+// for (let i = arr.length-1; i >= index; i--) {
+//     debugger
+//     arr[i+1] =arr[i];
+// }
+// arr[index] = n
+// console.log(arr);
+
+
+
+
+
+
+
+
+// Find all repeating elements in an array
+
+// const arr = [1,1,2,2,2,2,3,4,4,0]
+// const dup = []
+// const repeat = []
+// count = 0
+
+
+// for (let i = 0; i < arr.length; i++) {
+//     for (let j = i+1; j < arr.length; j++) {
+//         if(arr[i] == arr[j] && !dup.includes(arr[i])){
+//             dup[count++] = arr[i]
+//         } 
+//     }
+// }
+
+
+// arr.sort((a,b) => a-b)
+// for (let i = 0; i < arr.length; i++) {
+//     if(arr[i] === arr[i+1] && !dup.includes(arr[i])){
+//         dup.push(arr[i])
+//     }
+// }
+
+// for (let i = 0; i < arr.length; i++) {
+//     if (dup[arr[i]]) {
+//         dup[arr[i]]++
+//     }else{
+//         dup[arr[i]] = 1
+//     }
+// }
+// for (let i = 0; i < dup.length; i++) {
+//     debugger
+//     if(dup[i] > 1){
+//         repeat.push(i)
+//     }
+// }
+
+// console.log(repeat);
+
+
+
+// Find all the non-repeating elements in an array
+
+// const arr = [4,4,4,4,4,1,2,2,2,2,7,8,9]
+// let nonDup = []
+
+// for (let i = 0; i < arr.length; i++) {
+//     let chk = false;
+//     for (let j = 0; j < arr.length; j++) {
+//         debugger
+//         if(i != j && arr[i] === arr[j]){
+//             chk=true
+//             break
+//         }
+//     }
+//     if (!chk) {
+//         nonDup.push(arr[i])
+//     }
+// }
+
+
+// arr.sort((a,b) => a-b)
+
+// for (let i = 0; i < arr.length; i++) {
+//     if(arr[i+1] != arr[i] && arr[i] != arr[i-1]){
+//         nonDup.push(arr[i])
+//     }
+// }
+
+// const freq = arr.reduce((it, item) => {
+//     it[item] = (it[item] || 0) + 1;
+//     return it
+// }, {})
+
+// nonDup = arr.filter(item => freq[item] === 1)
+
+// console.log(nonDup);
