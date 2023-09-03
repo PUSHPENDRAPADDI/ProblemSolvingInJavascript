@@ -519,3 +519,55 @@
 // nonDup = arr.filter(item => freq[item] === 1)
 
 // console.log(nonDup);
+
+
+
+
+
+// Find all Symmetric Pairs in the array of pairs
+
+
+// const arr = [[1, 2], [2, 1], [3, 4], [4, 5], [5, 4]]
+// let ans = []
+
+// for (let i = 0; i < arr.length; i++) {
+//     for (let j = i+1; j < arr.length; j++) {
+//         if(arr[i][1] === arr[j][0] && arr[j][1] === arr[i][0]){
+//             ans.push(arr[i,j])
+//             break
+//         }
+//     }    
+// }
+// console.log(ans);
+
+
+// const arr = [[1, 2], [2, 1], [3, 4], [4, 5], [5, 4]]
+
+// const pair = new Map();
+// const symmetric = []
+
+// for (const p of arr) {
+//     const[a,b] = p;
+//     const pairKey = `${a}-${b}`;
+//     const reverspairKey = `${b}-${a}`
+//     if(pair.has(reverspairKey)){
+//         symmetric.push(p)
+//         symmetric.push(pair.get(reverspairKey))
+//         pair.delete(reverspairKey)
+//     }else{
+//         pair.set(pairKey,p)
+//     }
+// }
+
+// console.log(symmetric);
+
+
+
+
+
+
+
+
+
+
+
