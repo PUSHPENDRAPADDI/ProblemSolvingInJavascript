@@ -563,6 +563,406 @@
 
 
 
+// Maximum Product Subarray in an Array
+
+
+// let num = [1,3,-2,5,-4,8,-5];
+// let result = Number.MIN_SAFE_INTEGER;
+
+// for (let i = 0; i < num.length -1; i++) {
+//     for (let j = i + 1; j < num.length; j++) {
+//         let prod = 1;
+//         for (let k = i; k <= j; k++) {
+//             prod = prod * num[k]
+//         }
+//         result = Math.max(result, prod)
+//     }
+// }
+// console.log(result);
+
+// let pre = 1;
+// let last = 1;
+
+// for (let i = 0; i < num.length; i++) {
+//     if(pre === 0){
+//         pre = 1
+//     }if(last === 0){
+//         last = 1
+//     }
+//     pre *= num[i]
+//     last *= num[num.length - i -1]
+//     result = Math.max(result, Math.max(pre, last))
+// }
+
+// console.log(result);
+
+
+
+// let maxend = num[0]
+// let minend = num[0]
+// let maxprod = num[0]
+
+// for (let i = 0; i < num.length; i++) {
+//     const temp = maxend;
+//     maxend = Math.max(num[i], num[i] * maxend, num[i] * minend)
+//     minend = Math.min(num[i], num[i]* temp, num[i]* minend)
+//     maxprod = Math.max(maxprod, maxend)
+// }
+
+// console.log(maxprod);
+
+
+
+
+
+// Replace elements by its rank in the array
+
+
+
+// let num = [3,53,2,76,98,23,4,1,0,32,101]
+// let result = []
+
+// for (let i = 0; i < num.length; i++) {
+//     const set = new Set();
+//     for (let j = 0; j < num.length; j++) {
+//         if (num[j] < num[i]) {
+//             set.add(num[j])
+//         }
+//     }
+//     let rank = set.size+1
+//     result.push(rank)
+// }
+
+// console.log(result);
+
+// const copynum  = [...num]
+// copynum.sort((a,b) => a-b)
+
+// const rankMap = new Map();
+// let rank = 1
+
+// for (const n of copynum) {
+//     if(!rankMap.has(n)){
+//         rankMap.set(n, rank)
+//         rank++
+//     }
+// }
+// for (let i = 0; i < num.length; i++) {
+//     num[i] = rankMap.get(num[i])
+// }
+
+
+// console.log(num);
+
+
+// Sort Elements of an Array by Frequency
+
+
+// const num= [1,2,3,4,2,3,4,3,4,5]
+
+// const freqMap = {}
+
+// num.forEach((ele) => {
+//     freqMap[ele] = (freqMap[ele] || 0) + 1
+// });
+
+// num.sort((a,b) =>{
+//     const freqa = freqMap[a]
+//     const freqb = freqMap[b]
+//     if(freqa === freqb){
+//         return a-b
+//     }
+//     return freqb - freqa
+// })
+
+// console.log(num);
+
+
+
+
+// Rotation of elements of array- left and right
+
+
+
+// const arr = [10, 11, 12, 3, 7, 8, 9]
+
+// let k = 3
+
+// while (k > 0) {
+//     let temp = arr[arr.length - 1]
+//     for (let i = arr.length - 1; i >= 0; i--) {
+//         arr[i] = arr[i - 1]
+//     }
+//     arr[0] = temp
+//     k--
+// }
+
+// console.log(arr);
+
+// let temp = arr.splice(arr.length - k , k)
+// arr.unshift(...temp)
+
+// console.log(arr)
+
+
+
+
+// let k = 3
+
+// while (k > 0) {
+//     let temp = arr[0]
+//     for (let i = 0; i < arr.length; i++) {
+//         arr[i] = arr[i + 1]
+//     }
+//     arr[arr.length - 1] = temp
+//     k--
+// }
+
+// console.log(arr);
+
+// let temp = arr.splice(0, k)
+
+// arr.push(...temp)
+
+// console.log(arr);
+
+
+
+
+
+// Finding equilibrium index of an array
+
+
+// let arr = [5, 4, -1, 8, 8]
+
+// for (let i = 0; i < arr.length; i++) {
+//     let left = 0
+//     for (let j = 0; j < i; j++) {
+//         left += arr[j] 
+//     }
+//     let right = 0
+//     for (let j = i+1; j < arr.length; j++) {
+//         right += arr[j]
+//     }
+//     if (right === left) {
+//         console.log(i);
+//         break
+//     }
+// }
+
+
+
+
+
+// Sort an array according to the order defined by another array
+
+// let arr = [2,1,2,5,7,1,9,3,8,8,5,3,4]
+
+// let order = [2,1,8,5,3,4]
+
+// let pos = 0
+
+// for (let i = pos; i < order.length; i++) {
+//     for (let j = pos; j < arr.length; j++) {
+//         if(arr[j] === order[i]){
+//             let temp = arr[j]
+//             arr[j] = arr[pos]
+//             arr[pos] =temp
+//             pos++
+//         }
+//     }
+// }
+
+// console.log(arr);
+
+
+// Search an element in an array
+
+
+// let arr = [1,2,3,4,3,2,3,4,5,2]
+
+// let k = 2
+// let ans = []
+
+// arr.forEach((ele, i)=>{
+//     if(ele === k){
+//         ans.push(i)
+//     }
+// })
+
+// console.log(ans);
+
+
+// Check if array is subset of another array
+
+// const arr1  =[9,1,2,3,4]
+
+// const arr2 = [5,4,3,7,6,4,2,1,3]
+
+// let flag = false
+// for (let i = 0; i < arr1.length; i++) {
+//     flag = false
+//     debugger
+//     for (let j = 0; j < arr2.length; j++) {
+//         if (arr1[i] === arr2[j]) {
+//             flag = true
+//             break
+//         }
+//     }
+//     if (!flag) {
+//         break
+//     }
+// }
+
+// console.log(flag);
+
+
+// check a number is palindrome or not
+
+// let num = 121
+
+// let rev = parseFloat(num.toString().split('').reverse().join('')) * Math.sign(num)
+
+// let copy = num;
+// let rev = 0
+
+// while (copy > 0) {
+//     let temp = copy % 10
+//     rev = rev * 10 + temp
+//     copy = Math.floor(copy / 10)
+// }
+
+
+// if (num === rev) {
+//     console.log("Its palindrome");
+// }else{
+//     console.log(num,"Its not palindrome",rev);
+// }
+
+
+
+// Find all Palindrome Numbers in a given range
+
+// let min = 10
+// let max = 70
+
+// let result = []
+
+
+
+// for (let i = min; i <= max; i++) {
+//     let rev = parseFloat(i.toString().split('').reverse().join('')) * Math.sign(i)
+//     if (rev === i) {
+//         result.push(i)
+//     }
+// }
+
+
+// for (let i = min; i <= max; i++) {
+//     let copy = i;
+//     let rev = 0
+//     while (copy > 0) {
+//         let temp = copy % 10
+//         rev = rev *10 + temp
+//         copy = Math.floor(copy/10)
+//     }
+//     if (rev === i) {
+//         result.push(i)
+//     }
+// }
+
+
+// console.log(result);
+
+
+
+// Prime Number
+
+
+// const num = 15
+
+// let flag = true
+
+// for (let i = 2; i < num; i++) {
+//     if(num % i === 0){
+//         flag = false
+//         break
+//     }
+// }
+
+
+// console.log(flag);
+
+
+// Prime Number in a given range 
+
+
+// let min = 3
+// let max = 200
+// let result = []
+// let flag = true
+
+
+// for (let i = min; i <= max; i++) {
+//     flag = true
+//     for (let j = 2; j < i; j++) {
+//         if(i % j === 0){
+//             flag = false
+//             break
+//         }
+//     }
+//     if (flag) {
+//         result.push(i)
+//     }
+// }
+
+
+// console.log(result);
+
+// Check if a number is Armstrong Number or Not
+
+
+// const num = 1534
+
+
+// let result = 0
+// let copy = num
+
+// let digit = copy.toString().length
+
+// while (copy > 0) {
+//     let temp = copy % 10
+//     result = result + Math.pow(temp, digit)
+//     copy = Math.floor(copy/10)
+// }
+
+
+// if(result === num){
+//     console.log("Its Armstrong Number");
+// }else{
+//     console.log("Its not Armstrong Number");
+// }
+
+
+
+// Check whether a number is Perfect number or not
+
+
+// const num = 21
+
+// let sum = 0
+
+// for (let i = 1; i <= num/2; i++) {
+//     if(num % i === 0){
+//         sum += i
+//     }
+// }
+
+// if (sum === num) {
+//     console.log("Its perfect number");
+// }else{
+//     console.log("Its not perfect number");
+// }
 
 
 
@@ -570,4 +970,155 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Shorts
+
+
+
+// Push
+
+// const num = [1,2,3,4,5]
+
+// num.push(1, 3,3,4,5,6)
+
+// console.log(num);
+
+
+// Unshift()
+
+
+// let arr = [1,2,3,4,5,6]
+
+// arr.unshift(7,8,9)
+
+// console.log(arr);
+
+
+// Pop
+
+// let arr = [1,2,3,4,5,6]
+
+// arr.pop()
+
+// const num = 3;
+// for (let i = 0; i < num; i++) {
+//   arr.pop();
+// }
+
+
+// console.log(arr);
+
+
+
+// shift()
+
+// let arr = [1,2,3,4,5,6]
+
+// arr.shift()
+
+// const num = 3;
+// for (let i = 0; i < num; i++) {
+//   arr.shift();
+// }
+
+// console.log(arr);
+
+// Splice
+
+// Array.splice(startIndex, deleteCount, item1, item2,..)
+
+
+// const arr = [1,2,3,4,5,6]
+
+// arr.splice(2, 2,9,8,7,10)
+
+// console.log(arr);
+
+
+// fill()
+
+// const arr = new Array(10)
+
+// arr.fill(1)
+
+
+
+// let arr = [1,2,3,4,5,6]
+
+// arr.fill(10, 1, 4)
+
+
+// console.log(arr);
+
+
+// Palindrome number
+
+// let num = -1234
+// let rev = parseFloat(num.toString()
+// .split('').reverse().join('')
+// )* Math.sign(num)
+
+// console.log(rev);
 
