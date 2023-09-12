@@ -967,33 +967,168 @@
 
 
 
+// Check whether a given number is even or odd
+
+
+// const num = 11
+
+// if (num % 2 === 0) {
+//     console.log("Its even number");
+// }else{
+//     console.log("Its odd number");
+// }
+
+
+// if ((num & 1) === 0) {
+// console.log("Its even number");
+// }else{
+//     console.log("Its odd number");
+// }
+
+
+// Check whether a given number is positive or negative
+
+// const num = 0
+
+// if (num > 0) {
+//     console.log("Its positive");
+// } else {
+//     console.log("Its negative");
+// }
+
+// if(num >> 31 === 0){
+//     console.log("Its positive");
+// }else{
+//     console.log("Its negative");
+// }
+
+// console.log((Math.sign(num)));
+
+
+// Sum of N natural number
+
+// const n = 5
+
+// let sum = 0
+
+// for (let i = 0; i <= n; i++) {
+//     sum += i
+// }
+
+// sum = n * (n + 1) /2
+
+// console.log(sum);
+
+
+// Find sum of AP series 
+
+
+// const n = 5
+// let a = 1.5
+// const d = 3
+
+// let sum = 0
+
+// for (let i = 1; i <= n; i++) {
+//     sum += a 
+//     a += d
+// }
+
+// sum = (n / 2) * (2 * a + (n - 1) * d)
+
+// console.log(sum);
 
 
 
+// Program to find the sum of GP Series
+
+// const n = 3
+// let a = 1
+// const r = 0.5
+// let sum = 0
+
+// for (let i = 0; i < n; i++) {
+//     sum += a
+//     a *= r
+// }
+
+
+// sum = a * (Math.pow(r, n) - 1) / (r - 1);
+
+// console.log(sum);
 
 
 
+// Greatest of two number
+
+// const a = 5
+// const b = 4
+
+// console.log(Math.max(a,b,c));
 
 
+// if(a>b){
+//     console.log(a, " is greater");
+// }else{
+//     console.log(b, " is greater");
+// }
 
 
+// leap year
+
+// const year = 2000
+
+// if ((year % 100 !== 0) && (year % 4 === 0) || (year % 400 === 0)) {
+//     console.log("Its leap year");
+// } else {
+//     console.log("Its not leap year");
+// }
 
 
+// Reverse of number
+
+// let num = 723
+// let rev = 0
+
+// rev = parseFloat(num.toString().split('').reverse().join('')) * Math.sign(num)
+
+// while (num > 0) {
+//     let temp = num % 10;
+//     rev = rev * 10 + temp
+//     num = Math.floor(num/10)
+// }
+// console.log(rev);
 
 
+// Maximum and Minimum Digits in a Number
 
 
+// let num = 432678
+
+// let max = Number.MIN_SAFE_INTEGER
+// let min = Number.MAX_SAFE_INTEGER
+
+// while (num > 0) {
+//     let temp = num % 10;
+//     max = Math.max(temp, max)
+//     min = Math.min(temp, min)
+//     num = Math.floor(num / 10)
+// }
+
+// console.log(max ," is maximum and minimum is ", min);
 
 
+// Print fibbonacci Nth series
+// 0, 1,1,2,3,5
 
-
-
-
-
-
-
-
-
+// let n = 5
+// let arr = []
+// arr[0] = 0
+// arr[1] = 1
+// for (let i = 2; i <= n; i++) {
+//     arr[i] = arr[i - 2] + arr[i - 1]
+// }
+// console.log(arr);
 
 
 
