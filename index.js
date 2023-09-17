@@ -1131,6 +1131,249 @@
 // console.log(arr);
 
 
+// Factorial of a number
+
+// const num2 = 5
+
+// First approach
+
+// console.log(Array.from({length: num}, (_, i)=>i + 1).reduce((acc, j)=> acc * j))
+
+
+
+// let result = 1
+
+// for (let i = 2; i <= num; i++) {
+//     result *= i
+// }
+
+// Recursion Method for 
+
+// function fact(num) {
+//     if(num === 0 || num === 1){
+//         return 1
+//     }
+//     return num * fact(num -1)
+// }
+
+// console.log(fact(num2));
+
+
+
+// Power of number
+
+// const num = 5
+// const p = 3
+
+// let result = 1
+
+// result = Math.pow(num, p)
+
+// result = num ** p
+
+// for (let i = 0; i < p; i++) {
+//     result *= num
+// }
+
+
+// console.log(result);
+
+
+// Factors of number
+
+// const num = 9
+// let result = []
+// console.log(Array.from({length:num},(_,i)=> i+1).filter((i)=> num%i===0));
+
+// for (let i = 1; i <=num; i++) {
+//     if(num % i === 0){
+//         result.push(i)
+//     }
+// }
+
+// for (let i = 1; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) {
+//         if (num / i === i) {
+//             result.push(i)
+//         } else {
+//             result.push(num / i, i)
+//         }
+//     }
+// }
+
+
+// console.log(result);
+
+
+// Prime factors of number
+
+
+// let num  = 24
+
+// let result = []
+// let div = 2
+
+// while (num >= 2) {
+//     debugger
+//     if(num % div === 0){
+//         result.push(div)
+//         num /= div
+//     }
+//     else{
+//         div++
+//     }
+// }
+
+// console.log(result);
+
+
+
+// Strong Number
+
+
+// let num = 145
+// const numstr = num.toString()
+// const result = numstr.split('').reduce((acc, digit) =>
+//     parseInt(acc) + Array.from({ length: digit },
+//         (_, i) => i + 1)
+//         .reduce((acc, cur) => acc * cur)
+// )
+
+
+// let sum = 0;
+// for (let i = 0; i < numstr.length; i++) {
+//     const digit = parseInt(numstr[i], 10)
+//     let result = 1;
+//     for (let j = 2; j <= digit; j++) {
+//         result*= j
+//     }
+//     sum += result
+// }
+
+// console.log(sum);
+
+
+// Automorphic number
+
+
+// let num = 25
+// const res = (num * num).toString().endsWith(num.toString())
+// let flag = true
+// let sqr = num * num
+// while (num > 0) {
+//     if (num % 10 !== sqr % 10) {
+//         flag = false
+//         break
+//     }
+//     num = Math.floor(num / 10)
+//     sqr = Math.floor(sqr / 10)
+// }
+// console.log(flag);
+
+// Find GCD of two numbers
+
+// const a = 50
+// const b = 60
+
+// let ans;
+
+// function gcd(a,b) {
+//     return Math.abs(b) === 0 ? Math.abs(a):
+//     gcd(b , a%b)
+// }
+
+// for (let i = 1; i < Math.min(a,b); i++) {
+//     debugger
+//     if(a % i === 0 && b % i === 0){
+//         ans = i
+//     }
+// }
+
+// console.log(ans);
+
+
+// Find LCM of two number
+
+// let gcd = 1
+// const a = 4
+// const b = 8
+
+// for (let i = 1; i < Math.min(a, b); i++) {
+//     if (a % i === 0 && b % i === 0) {
+//         gcd = i
+//     }
+// }
+
+// let lcm = (a * b)/ gcd
+// console.log(lcm);
+
+
+
+// Check if number is harshed number or not
+
+
+// let num = 378
+
+// let sum = 0
+// let original = num
+
+// sum = [...num.toString()].reduce((acc,digit) => 
+//  acc + parseInt(digit, 10), 0)
+
+
+// while (num > 0) {
+//     sum += num % 10
+//     num = Math.floor(num / 10)
+// 
+// let str = num.toString()
+// for (let i = 0; i < str.length; i++) {
+//     sum += parseInt(str[i])
+// }
+
+// console.log(num % sum === 0);
+
+
+// Check if the number is an abundant number or not
+
+
+// let num = 18
+// let sum = 1
+// for (let i = 0; i < num; i++) {
+//     if(num % i === 0){
+//         sum += i
+//     }
+// }
+
+// for (let i = 2; i <= Math.sqrt(num); i++) {
+//     if (num % i === 0) {
+//         sum+=i
+//         if(i !== num/i){
+//             sum += num / i
+//         }
+//     }
+// }
+
+// console.log(sum > num);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
