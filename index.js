@@ -29,7 +29,7 @@
 
 // let arr = [-2, -3, 1, 5, -6, 3]
 
-// arr.sort((a,b) => a - b); 
+// arr.sort((a,b) => a - b);
 
 // let small = Math.min(...arr)
 // let large = Math.max(...arr)
@@ -126,7 +126,7 @@
 //              }
 //         }
 //         console.log(array[i], " is time ", count);
-//     }    
+//     }
 // }
 
 
@@ -152,7 +152,7 @@
 
 // for (const ele of array) {
 //     if (frequency.has(ele)) {
-//         frequency.set(ele, frequency.get(ele) + 1) 
+//         frequency.set(ele, frequency.get(ele) + 1)
 //     }else{
 //         frequency.set(ele, 1)
 //     }
@@ -413,12 +413,12 @@
 // const arr = [1,2,3,4,5]
 // n= 8
 // index = 3
-// for first index 
+// for first index
 
 // for (let i = arr.length-1; i >= 0; i--) {
 //     arr[i + 1] = arr[i]
 // }
-// arr[0] = n 
+// arr[0] = n
 
 // arr.unshift(n)
 
@@ -453,7 +453,7 @@
 //     for (let j = i+1; j < arr.length; j++) {
 //         if(arr[i] == arr[j] && !dup.includes(arr[i])){
 //             dup[count++] = arr[i]
-//         } 
+//         }
 //     }
 // }
 
@@ -536,7 +536,7 @@
 //             ans.push(arr[i,j])
 //             break
 //         }
-//     }    
+//     }
 // }
 // console.log(ans);
 
@@ -738,7 +738,7 @@
 // for (let i = 0; i < arr.length; i++) {
 //     let left = 0
 //     for (let j = 0; j < i; j++) {
-//         left += arr[j] 
+//         left += arr[j]
 //     }
 //     let right = 0
 //     for (let j = i+1; j < arr.length; j++) {
@@ -894,7 +894,7 @@
 // console.log(flag);
 
 
-// Prime Number in a given range 
+// Prime Number in a given range
 
 
 // let min = 3
@@ -1020,7 +1020,7 @@
 // console.log(sum);
 
 
-// Find sum of AP series 
+// Find sum of AP series
 
 
 // const n = 5
@@ -1030,7 +1030,7 @@
 // let sum = 0
 
 // for (let i = 1; i <= n; i++) {
-//     sum += a 
+//     sum += a
 //     a += d
 // }
 
@@ -1147,7 +1147,7 @@
 //     result *= i
 // }
 
-// Recursion Method for 
+// Recursion Method for
 
 // function fact(num) {
 //     if(num === 0 || num === 1){
@@ -1206,6 +1206,7 @@
 
 
 // Prime factors of number
+
 
 
 // let num  = 24
@@ -1317,7 +1318,7 @@
 // let sum = 0
 // let original = num
 
-// sum = [...num.toString()].reduce((acc,digit) => 
+// sum = [...num.toString()].reduce((acc,digit) =>
 //  acc + parseInt(digit, 10), 0)
 
 
@@ -1354,6 +1355,156 @@
 // }
 
 // console.log(sum > num);
+
+// Sum of digits of a number
+
+
+// let num = 2341
+
+// let digit = num.toString().split('').map(Number)
+// console.log(digit.reduce((sum, digit) => sum + digit, 0));
+
+// let sum = 0
+// while (num > 0) {
+//     sum = sum + num % 10
+//     num = Math.floor(num / 10)
+// }
+// let digit = Array.from(String(num), Number)
+// console.log(digit.reduce((sum, digit) => 
+//  sum + digit, 0 ));
+
+
+// Find the sum of number in the given range
+
+// const start = 2
+// const end = 9
+// let sum = 0
+// for (let i = start; i <= end; i++) {
+//     sum += i
+// }
+// sum = (end * (end + 1))/2 - ((start - 1) * (start))/2
+// console.log(sum);
+
+
+// Permutations in which N people can occupy R seats
+
+// const n = 6
+// const r = 4
+// let num = 1
+// let den = 1
+// for (let i = 1; i <= n; i++) {
+//     num *= i
+// }
+// for (let i = 1; i <= n - r; i++) {
+//     den *= i
+// }
+// let ans = 1
+// for (let i = n; i >= n - r + 1; i--) {
+//     ans *= i
+// }
+// console.log(ans);
+
+// Replace all the 0's with 1 in a given integer
+
+
+// let num = 102000032
+
+// console.log(num.toString().replace(/0/g, '1'));
+
+// console.log(num.toString().split('0').join('1'));
+
+// let ans = 0
+// let tm = 1
+
+// while (num > 0) {
+//     let d = num % 10
+//     if (d === 0) {
+//         d = 1
+//     }
+//     ans = d * tm + ans
+//     num = Math.floor(num / 10)
+//     tm = tm * 10
+// }
+
+// console.log(ans);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1500,3 +1651,282 @@
 
 // console.log(rev);
 
+// Array.from()
+
+// const num = 5
+
+// console.log(Array.from(
+//     {length: num},
+//      (_, i)=> i + 1
+// ));
+
+
+// Factorial of num
+
+// const num = 5
+
+// console.log(
+//     Array.from({length:num},
+//         (_, i)=> i + 1).reduce
+//         ((acc, j) => acc*j)
+// );
+
+// Factors of number
+
+// const num = 9
+
+// console.log(
+// Array.from({length: num},
+//     (_,i)=> i +1).filter(
+//         (i)=> num % i === 0
+//     )
+//     );
+
+
+
+
+
+// Objects in javascripts
+
+// class Phone {
+//     constructor(brand, model, country) {
+//         this.brand = brand;
+//         this.model = model,
+//             this.country = country
+//     }
+// }
+// const phone1 = new Phone("Iphone", "5", "USA")
+// const phone2 = new Phone("Micromax", "i2", "INDIA")
+// const phone3 = new Phone("Realme", "5i", "China")
+// console.log(phone1, phone2, phone3);
+
+// console.table({phone1,phone2,phone3})
+
+
+// Count in console
+
+// console.count("a")
+// console.count("a")
+// console.count("b")
+// console.count("b")
+
+
+// for (let i = 0; i < 5; i++) {
+//    console.count("i")
+// }
+
+// console table
+
+// const train = {
+//     name: "Delhi Express",
+//     start: "lko"
+// }
+
+// console.table(train)
+// console.clear()
+
+// const train2 = {
+//     name: "Mumbai Express",
+//     start: "Delhi"
+// }
+
+// console.table([train, train2])
+
+// console.clear()
+// const train1 = [train,train2]
+// console.table(train1, "start")
+
+// const num = 1
+
+// if(isNaN(num)){
+//     console.log(typeof num,"Not a number");
+// }else{
+//     console.log(typeof num,"Is number");
+// }
+
+// Merge 2 array
+
+// const a  = [1,2]
+// const b = [3,4]
+
+
+// const c = [...a, ...b]
+// console.log(c)
+
+// Convert  array to String
+
+// const names = ["Peter", "Parker", "Tony"]
+
+// const str = names.toString()
+
+// console.log(str);
+
+// Convert String to array
+
+// const str = "Peter, Parker, Tony"
+
+
+// const arr = str.split(",")
+ 
+// console.log(arr);
+
+
+// GetCountryCd
+
+// let regionName = new Intl.DisplayNames(['En'],
+// {type:'region'});
+
+// let countryCode = 'ID'
+
+// // "ID", IN, UK
+
+// console.log(regionName.of(countryCode));
+
+// Cut last n characters or elements
+
+// const num = [1, 2, 3, 4, 5, 6]
+// const n = num.slice(-3)
+
+// console.log(n);
+
+// let lesson = "Javascript"
+// let l = lesson.slice(-1)
+
+// console.log(l);
+
+// Change arr length
+
+// const a = [1,2,3,4,5]
+// a.length =13
+// console.log(a);
+
+
+// Compare 2 array
+
+// const n1 = [1,2,3]
+// const n2 = [1,2,3]
+
+// console.log(JSON.stringify(n2)  === JSON.stringify(n1))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// replace all accurrences
+
+// let text = "Hi&dfgtr&ertvf&-sdf&"
+
+// console.log(text);
+
+// let newText = text.replace("&", " ")
+// console.log(newText);
+
+
+
+
+// newText = text.replaceAll("&", " ")
+// console.log(newText);
+
+
+
+
+
+// Strong Number
+
+// 1! + 4! + 5!
+
+// let num = 145
+
+// const numstr = 
+//     num.toString()
+// const result = numstr.split('').reduce((acc, digit) =>
+//     parseInt(acc) + Array.from({ length: digit },
+//         (_, i) => i + 1)
+//         .reduce((acc, cur) => acc * cur)
+// )
+
+// console.log(result === num);
+ 
+
+// Square root 
+
+// const num = 15
+
+// console.log(Math.sqrt(num));
+
+
+// ParseInt
+// const str = '50.565'
+// console.log(typeof parseFloat( str));
+
+
+// Automorphic number
+//  5 * 5 = 25
+// const num = 4
+
+// const res = (num * num).toString().endsWith(num.toString())
+
+// console.log(res);
+
+// Absolute 
+
+// const n = -3
+// console.log(Math.abs(n));
+
+// Min
+// console.log(Math.min(3,4,5,2, 1.9))
+
+// Max
+// console.log(Math.max(3,4,9,1,23, 23.5));
+
+// Sum of Digits
+
+// let num = 378
+// let sum = 0
+// sum = [...num.toString()].reduce((acc,digit) =>
+//  acc + parseInt(digit, 10), 0)
+//  console.log(sum);
+
+// Math floar
+
+// num = 0
+// num = 7 /3
+// console.log(Math.floor(num));
+
+// Sum of digits
+
+// let num = 2341
+
+// let digit = num.toString().split('').map(Number)
+
+// console.log(digit.reduce((sum, digit) => sum + digit, 0));
+
+// Replace all the 0's with 1 in a given integer
+
+// let num = 102000032
+
+// console.log(num.toString().split('0').join('1'));
+
+// console.log(num.toString().replace(/0/g, '1'));
