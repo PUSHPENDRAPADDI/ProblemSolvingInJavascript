@@ -1135,7 +1135,7 @@
 
 // const num2 = 5
 
-// First approach
+// First Way
 
 // console.log(Array.from({length: num}, (_, i)=>i + 1).reduce((acc, j)=> acc * j))
 
@@ -1430,6 +1430,191 @@
 
 
 
+// Check if the given String is Palindrome or not
+
+// const str = "abc1cba"
+
+// const reverse = str.split('').reverse().join('')
+// console.log(reverse === str);
+
+// let flag = true
+
+// for (let i = 0; i < str.length/2; i++) {
+//     if(str.charAt(i) !== str.charAt((str.length - 1) - i)){
+//         flag = false
+//         break
+//     }
+// }
+
+// console.log(flag);
+
+
+
+// Count number of vowels, consonants, spaces, numbers in String
+
+
+// const str = "Hell5o BuddyA 1001"
+
+// let vowel = str.match(/[aeiouAEIOU]/g);
+// let consonant = str.match(/[bcdfghjklmnpqrstvwyzHB]/g);
+// let spaces = str.match(/[\s]/g)
+// let num = str.match(/[0-9]/g)
+
+
+// console.log(vowel.length);
+// console.log(consonant.length);
+// console.log(spaces.length);
+// console.log(num.length);
+
+
+
+// let dummy = str.split('')
+// let vowel = dummy.filter(char => /[aeiouAEIOU]/.test(char)).length
+// let consonant  =dummy.filter(char => /[a-z]/.test(char) && !/[aeiouAEIOU]/.test(char) ).length
+
+// let space = dummy.filter(char => char === ' ').length
+// let num = dummy.filter(char => /[0-9]/.test(char)).length
+
+// console.log(num);
+
+
+// Find the ASCII value of a character
+
+
+// const ch = 'ABCD'
+
+// let assciVal = ch.charCodeAt()
+
+// let  assciVal = ch.codePointAt()
+
+// console.log(assciVal);
+
+
+
+// ['a', 'e', 'i','o', 'u', 'A', 'E', 'I','O', 'U']
+
+// Remove all vowels from the String
+
+
+// let str = "Hello, World"
+// let ans = str.replace(/[aeiouAEIOU]/g, '')
+// console.log(ans);
+
+// let result = str.split("").filter((ch) =>{
+//     return 'aeiouAEIOU'.indexOf(ch) === -1
+// }).join('')
+
+// console.log(result);
+
+
+// let vowel = new Set(['a', 'e', 'i','o', 'u', 'A', 'E', 'I','O', 'U']);
+// let result = str.split('').filter(ch =>{
+//     return !vowel.has(ch);
+// }).join('')
+// console.log(result);
+
+
+// Remove Spaces from a String
+
+
+// let str = "Hello World We are Ready to code"
+
+// let out = str.split(' ').join('')
+
+// console.log(out);
+
+
+// let out = str.replace(/\s/g, '')
+
+// let out = str.split('').filter(ch => ch !== " ").join('')
+// console.log(out);
+
+// Remove characters from a string except alphabets
+
+// const str  ="Hello123 World!$"
+
+// let out = str.replace(/[^a-zA-Z" "]/g, "")
+
+
+// let out = str.split('').filter(ch => /[a-zA-Z" "]/.test(ch)).join('')
+
+// console.log(out);
+
+
+// Reverse a String
+
+// const str = "Hello World"
+// let out = str.split('').reverse().join('')
+
+// let out = '';
+// for (let i = str.length-1; i >= 0; i--) {
+//     out += str[i]
+// }
+
+// out = [...str].reverse().join('')
+// console.log(out);
+
+
+
+// const str = "(a+b) * (a-b) / (c -s)";
+
+// let out = ''
+
+// // out = str.replace(/[)(]/g, '')
+
+// for (let i = 0; i < str.length; i++) {    
+//     if(str.charAt(i) !== ')' && str.charAt(i) !== '('){
+//         out += str.charAt(i)
+//     }
+// }
+// console.log(out);
+
+
+
+// Sum of the Numbers in a String
+
+
+// const str = "abc123$54"
+// let num = str.match(/\d/g)
+// let out = num.reduce((acc, n) =>{
+//     return acc+ parseInt(n, 10)
+// },0)
+
+// let out = 0
+
+// for (let i = 0; i < str.length; i++) {
+//     if(str.charAt(i) >= '0' && str.charAt(i) <= '9'){
+//         out += +str.charAt(i)
+//     }
+// }
+
+// console.log(out);
+
+
+// Capitalize first and last character of each word of a string
+
+// const str = "hello world"
+
+// let out = str.split(' ').map((word) =>{
+//     return word.charAt(0).toUpperCase() + word.slice(1,-1)+
+//     word.charAt(word.length -1).toUpperCase()
+// }).join(' ')
+
+// let out = ''
+
+// const temp = str.split('')
+
+// for (let i = 0; i < temp.length; i++) {
+//     if(i === 0 || i == temp.length -1){
+//         temp[i] = str.charAt(i).toUpperCase()
+//     }else if(str.charAt(i) === ' '){
+//         temp[i-1] = str.charAt(i-1).toUpperCase()
+//         temp[i+1] = str.charAt(i+1).toUpperCase()
+//     }
+// }
+// out = temp.join('')
+
+// console.log(out);
 
 
 
@@ -1486,6 +1671,7 @@
 
 
 
+ 
 
 
 
@@ -1493,6 +1679,91 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+// Calculate Frequency of characters in a String
+
+// First Way
+  
+//   const str = "hello world";
+//   const frequency = {};
+//   for (const char of str) {
+//     frequency[char] = (frequency[char] || 0) + 1;
+//   }
+//   console.log(frequency);
+
+
+// Second way
+  
+//   const str = "hello world";
+//   const frequency = new Map();
+  
+//   for (const char of str) {
+//     frequency.set(char, (frequency.get(char) || 0) + 1);
+//   }  
+//   console.log(frequency);
+
+
+// Third way
+
+
+//   const str = "hello world";
+//   const charFrequency = str.split('').reduce((frequency, char) => {
+//     frequency[char] = (frequency[char] || 0) + 1;
+//     return frequency;
+//   }, {})
+//   console.log(charFrequency);
+
+
+// Fourt way
+
+// const str = "hello world"
+// let sortedstr = str.split('').sort().join('')
+// let map = new Map()
+// let count = 0;
+// let cha = sortedstr[0]
+
+
+// for (let i = 0; i < sortedstr.length; i++) {
+//     if(sortedstr.charAt(i) === cha){
+//         count++;
+//     }else{
+//         map.set(cha, count)
+//         count = 1
+//         cha = sortedstr.charAt(i)
+//     }
+// }
+
+// console.log(map);
+
+
+// Find Non-repeating characters of a String
+
+
+  const str = "aaabbcde";
+
+//   First Way
+
+  const charCount = {};
+  for (let char of str) {
+    console.log((charCount[char] || 0) + 1);
+    charCount[char] = (charCount[char] || 0) + 1;
+    console.log(charCount);
+  }  
+//   console.log(
+//     Object.keys(charCount)
+//     .filter(char => charCount[char] === 1)
+//     );
+
+// Second Way
 
 
 
