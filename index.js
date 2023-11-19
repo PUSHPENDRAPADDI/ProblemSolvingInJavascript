@@ -1619,29 +1619,242 @@
 
 
 
+// Frequency of characters in a String
+
+// const str = "hello world"
+
+// first approach
+// const obj = {}
+
+// for(let ch of str){
+//     obj[ch] = (obj[ch] || 0) + 1
+// }
+// console.log(obj);
+
+
+// Second Approach
+
+// const result = new Map();
+
+// for(let ch of str){
+//     result.set(ch, (result.get(ch) || 0) + 1)
+// }
+
+// console.log(result);
+
+
+// Third Approach
+
+
+// let sort = str.split('').sort().join('')
+// let map = new Map()
+// let count = 0
+// let ch = sort[0]
+
+// for (let i = 0; i < sort.length; i++) {
+//     if(sort.charAt(i) === ch){
+//         count++
+//     }else{
+//         map.set(ch, count)
+//         count  = 1
+//         ch = sort.charAt(i)
+//     }
+// }
+
+// console.log(map);
+
+// Fourth way
+
+
+//   const str = "hello world";
+//   const charFrequency = str.split('').reduce((frequency, char) => {
+//     frequency[char] = (frequency[char] || 0) + 1;
+//     return frequency;
+//   }, {})
+//   console.log(charFrequency);
+
+
+// Find Non-repeating characters of a String
+
+// const str = "Hello world"
+
+// first Approach 
+
+// const obj = {}
+
+// for(let ch of str){
+//     obj[ch] = (obj[ch] || 0 ) + 1
+// }
+
+// console.log(Object.keys(obj).filter(ch => obj[ch] === 1));
+
+
+// Second Approach
+
+// for (let i = 0; i < str.length; i++) {
+//     if(str.indexOf(str[i])  ===  str.lastIndexOf(str[i])){
+//         console.log(str[i]);
+//     }
+// }
+
+
+// Check if two Strings are anagrams of each other
+
+
+// const str1 = 'listenn'
+// const str2 = 'silentn'
+
+// first Approach
+
+// const sortStr1 = str1.split('').sort().join('')
+// const sortStr2 = str2.split('').sort().join('')
+
+// console.log(sortStr1 === sortStr2);
+
+
+// Second Approach
+
+// let obj1 = {}
+// let obj2 = {}
+// let flag = true 
+
+//  for(let ch of str1){
+//     obj1[ch] = (obj1[ch] || 0) + 1
+//  }
+
+//  for(let ch of str2){
+//     obj2[ch] = (obj2[ch] || 0) + 1
+//  }
+
+//  for(let key in obj1){
+//     if(obj1[key] !== obj2[key]){
+//         flag = false
+//         break
+//     }
+//  }
+
+//  console.log(flag);
+
+// Count common sub-sequence in two strings
+
+
+// const str1 = 'ajblqcpdz'
+// const str2 = 'aefcnbtdi'
+
+// const len1 = str1.length
+// const len2 = str2.length
+// const array = Array.from({length: len1 + 1}, () => Array(len2+1).fill(0))
+
+// for (let i = 1; i <= len1; i++) {
+//     for (let j = 1; j <= len2; j++) {
+//         if(str1[i -1]  === str2[j - 1]){
+//         array[i][j] = array[i-1][j-1] + array[i-1][j] +1
+//     }else{
+//         array[i][j] = array[i-1][j] + array[i][j-1] -array[i-1][j-1]
+//     }
+// }
+// }
+// console.log(array);
 
 
 
 
+// Maximum occurring character in a string
+
+// let str = "hello worlddddd"
+
+// first Approach
+
+// let obj = {}
+// let maxch = ''
+// let maxCount = 0
+
+
+// for(let ch of str){
+//     obj[ch] = (obj[ch] || 0) + 1
+//     if(obj[ch] > maxCount){
+//         maxCount = obj[ch]
+//         maxch = ch
+//     }
+// }
+
+// console.log(maxCount , " and " , maxch);
+
+
+// Second Approach
+
+// let chCount = Array(256).fill(0);
+
+
+// for(let ch of str){
+//     chCount[ch.charCodeAt(0)]++
+//     if(chCount[ch.charCodeAt(0)] > maxCount){
+//         maxCount = chCount[ch.charCodeAt(0)]
+//         maxch = ch
+//     }
+// }
+
+// console.log(maxCount , " and " , maxch);
+
+
+// Remove All Duplicates from a String
+
+// let str = 'abbaccddeff'
+
+// First Approach
+
+// let result = [...new Set(str)].join('')
+
+// console.log(result);
+
+
+// Second Approach
+
+
+// let result = str.split('').filter((val, ind, self) => self.indexOf(val) === ind ).join('')
+
+// third Approach
+
+// let obj = {}
+// let result=''
+// for(let ch of str){
+//     if(!obj[ch]){
+//         result += ch
+//         obj[ch] = true
+//     }
+// }
+// console.log(result);
+
+// Print all the duplicates in the string
+
+// let str = 'Hello world'
+
+// first Approach
+// let obj = {}
+
+// for(let ch of str){
+//     obj[ch] = (obj[ch] || 0) +1
+// }
+// for(let ch in obj){
+//     if(obj[ch] > 1){
+//         console.log(ch, " is duplicated ", obj[ch]);
+//     }
+// }
+
+// let result = []
+
+// for (let i = 0; i < str.length; i++) {
+//     let ch = str[i]
+//     if(str.indexOf(ch) !== str.lastIndexOf(ch) && !result.includes(ch)){
+//         result.push(ch)
+//     }
+// }
+// console.log(result);
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Remove Characters from first String present in the Second String
 
 
 
@@ -1689,82 +1902,206 @@
 
 
 
-// Calculate Frequency of characters in a String
-
-// First Way
-  
-//   const str = "hello world";
-//   const frequency = {};
-//   for (const char of str) {
-//     frequency[char] = (frequency[char] || 0) + 1;
-//   }
-//   console.log(frequency);
 
 
-// Second way
-  
-//   const str = "hello world";
-//   const frequency = new Map();
-  
-//   for (const char of str) {
-//     frequency.set(char, (frequency.get(char) || 0) + 1);
-//   }  
-//   console.log(frequency);
 
 
-// Third way
 
 
-//   const str = "hello world";
-//   const charFrequency = str.split('').reduce((frequency, char) => {
-//     frequency[char] = (frequency[char] || 0) + 1;
-//     return frequency;
-//   }, {})
-//   console.log(charFrequency);
 
 
-// Fourt way
-
-// const str = "hello world"
-// let sortedstr = str.split('').sort().join('')
-// let map = new Map()
-// let count = 0;
-// let cha = sortedstr[0]
 
 
-// for (let i = 0; i < sortedstr.length; i++) {
-//     if(sortedstr.charAt(i) === cha){
-//         count++;
-//     }else{
-//         map.set(cha, count)
-//         count = 1
-//         cha = sortedstr.charAt(i)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Remove Characters from first String present in the Second String
+
+
+// let str1 = "abcde"
+// let str2= "acfh"
+
+// First Approach
+
+// let result = '';
+//     for (let i = 0; i < str1.length; i++) {
+//         if (str2.indexOf(str1[i]) === -1) {
+//             result += str1[i];
+//         }
 //     }
+// console.log(result);
+
+
+// Scond approach 
+
+// let resultString = str1.split('').filter(char => str2.indexOf(char) === -1);
+// console.log(resultString.join(''))
+
+
+// Third Approach
+
+// let regex = new RegExp('[' + str2 + ']', 'g');
+// console.log(str1.replace(regex, '')); 
+
+
+// Change every letter with next lexicographic alphabet alphabet in the given string
+
+// First Approach
+
+//   const str = "Hello, Worldz!";
+//   const result = str.split('').map(char => {
+//     if (char >= 'a' && char < 'z') {
+//       return String.fromCharCode(char.charCodeAt(0) + 1);
+//     } else if (char === 'z') {
+//       return 'a';
+//     } else if (char >= 'A' && char < 'Z') {
+//       return String.fromCharCode(char.charCodeAt(0) + 1);
+//     } else if (char === 'Z') {
+//       return 'A';
+//     } else {
+//       return char;
+//     }
+//   }).join('');
+//   console.log(result);
+  
+
+// Second Approach
+  
+//   const str = "Hello, Worldz!";
+//   const modifiedString =  str.replace(/[a-zA-Z]/g, (char) => {
+//     return String.fromCharCode(char.charCodeAt(0) + (char < 'z' ? 1 : -25));
+//   });
+//   console.log(modifiedString);
+  
+
+
+// Find the largest word in a String
+
+// First Approach
+
+// let str = "This is a sample string with different words";
+
+// First Approach
+
+// let words = str.split(' ');
+//     let largestWord = words.reduce((largestWord, currentWord) => {
+//         return currentWord.length > largestWord.length ? currentWord : largestWord;
+//     }, '');
+
+// console.log(largestWord);
+
+// Second Approach
+
+// let len = str.length;
+// let i = 0, j = 0;
+// let maxWord="";
+// let max_length = 0, max_start = 0;
+// while (j <= len) {
+//         if ((j < len && str.charAt(j) != ' ') || j === len)
+//             j++;
+//         else {
+//             let curr_length = j - i;
+//             if (curr_length > max_length) {
+//                     max_length = curr_length;
+//                     max_start = i;
+//             }
+//             j++;
+//             i = j;
+//         }
 // }
-
-// console.log(map);
-
-
-// Find Non-repeating characters of a String
+// maxWord = str.substring(max_start, max_start + max_length);
+// console.log(maxWord);
 
 
-  const str = "aaabbcde";
+// Write a program to sort characters in a string
 
-//   First Way
+// First Approach 
 
-  const charCount = {};
-  for (let char of str) {
-    console.log((charCount[char] || 0) + 1);
-    charCount[char] = (charCount[char] || 0) + 1;
-    console.log(charCount);
-  }  
-//   console.log(
-//     Object.keys(charCount)
-//     .filter(char => charCount[char] === 1)
-//     );
+//   var str = "hello";
+//   var result = str.split('').sort().join('');
+//   console.log(result);
+  
 
-// Second Way
+// Second Approach
 
+
+// var str = "helleo";
+// var charArray = str.split('');
+// for (var i = 0; i < charArray.length - 1; i++) {
+//   for (var j = i + 1; j < charArray.length; j++) {
+//     if (charArray[i] > charArray[j]) {
+//       var temp = charArray[i];
+//       charArray[i] = charArray[j];
+//       charArray[j] = temp;
+//     }
+//   }
+// }
+// var sortedString = charArray.join('');
+// console.log(sortedString);
+  
+
+// Count the number of words in a given string
+
+// let str = "the good boys"
+
+// First Approach
+
+// let result=  str.split(/\s+/).filter((word) => {
+//       return word.length > 0;
+//     }).length;
+  
+// console.log(result);
+
+// Second Approach
+
+//     var count = 0;
+//     var isWord = false;
+//     for (var char of str) {
+//       if (/\w/.test(char)) {
+//         if (!isWord) {
+//           isWord = true;
+//           count++;
+//         }
+//       } else {
+//         isWord = false;
+//       }
+//     }
+// console.log(count);
 
 
 
