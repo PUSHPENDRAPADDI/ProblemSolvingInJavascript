@@ -1857,223 +1857,270 @@
 // Remove Characters from first String present in the Second String
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Remove Characters from first String present in the Second String
-
-
-// let str1 = "abcde"
-// let str2= "acfh"
+// const str1 = 'abcde'
+// const str2 = 'acfh'
 
 // First Approach
 
-// let result = '';
-//     for (let i = 0; i < str1.length; i++) {
-//         if (str2.indexOf(str1[i]) === -1) {
-//             result += str1[i];
-//         }
+// let result = ''
+
+// for (let i = 0; i < str1.length; i++) {
+//     if(str2.indexOf(str1[i]) === -1){
+//         result += str1[i]
 //     }
+// }
+
 // console.log(result);
 
 
-// Scond approach 
+// Second approach
 
-// let resultString = str1.split('').filter(char => str2.indexOf(char) === -1);
-// console.log(resultString.join(''))
+
+// result = str1.split('').filter(ch => str2.indexOf(ch) === -1)
+// console.log(result.join(''));
 
 
 // Third Approach
 
-// let regex = new RegExp('[' + str2 + ']', 'g');
-// console.log(str1.replace(regex, '')); 
+// let regex = new RegExp('[' + str2 + ']', 'g')
+
+// console.log(str1.replace(regex, ''));
 
 
-// Change every letter with next lexicographic alphabet alphabet in the given string
+// Change every letter with next lexicographic alphabet in the given string
 
-// First Approach
+// const str = "Hello world z"
 
-//   const str = "Hello, Worldz!";
-//   const result = str.split('').map(char => {
-//     if (char >= 'a' && char < 'z') {
-//       return String.fromCharCode(char.charCodeAt(0) + 1);
-//     } else if (char === 'z') {
-//       return 'a';
-//     } else if (char >= 'A' && char < 'Z') {
-//       return String.fromCharCode(char.charCodeAt(0) + 1);
-//     } else if (char === 'Z') {
-//       return 'A';
-//     } else {
-//       return char;
+// const result = str.split('').map(ch => {
+//     if(ch >= 'a' && ch < 'z'){
+//         return String.fromCharCode(ch.charCodeAt(0) + 1)
+//     }else if(ch >= 'A' && ch < 'Z'){
+//         return String.fromCharCode(ch.charCodeAt(0) + 1)
+//     } else if(ch === 'z'){
+//         return 'a'
+//     }else if(ch === 'Z'){
+//         return 'A'
+//     }else{
+//         return ch
 //     }
-//   }).join('');
-//   console.log(result);
-  
+// }).join('')
 
-// Second Approach
-  
-//   const str = "Hello, Worldz!";
-//   const modifiedString =  str.replace(/[a-zA-Z]/g, (char) => {
-//     return String.fromCharCode(char.charCodeAt(0) + (char < 'z' ? 1 : -25));
-//   });
-//   console.log(modifiedString);
-  
+// Second approach
+
+
+// let result = str.replace(/[a-zA-Z]/g, (ch) => {
+//     return String.fromCharCode(ch.charCodeAt(0) + (ch < 'z' ? 1 : -25))
+// })
+
+
+// console.log(result);
 
 
 // Find the largest word in a String
 
-// First Approach
-
-// let str = "This is a sample string with different words";
+// let str = "This code is little different from other"
 
 // First Approach
 
-// let words = str.split(' ');
-//     let largestWord = words.reduce((largestWord, currentWord) => {
-//         return currentWord.length > largestWord.length ? currentWord : largestWord;
-//     }, '');
+// let result =  str.split(' ').reduce((largest, current) => {
+//     return current.length > largest.length ? current : largest
+// },'')
 
-// console.log(largestWord);
+// console.log(result);
 
-// Second Approach
+// Second approach
 
-// let len = str.length;
-// let i = 0, j = 0;
-// let maxWord="";
-// let max_length = 0, max_start = 0;
-// while (j <= len) {
-//         if ((j < len && str.charAt(j) != ' ') || j === len)
-//             j++;
-//         else {
-//             let curr_length = j - i;
-//             if (curr_length > max_length) {
-//                     max_length = curr_length;
-//                     max_start = i;
-//             }
-//             j++;
-//             i = j;
+// let len = str.length
+// let i =0,j=0
+// let maxword=''
+// let maxLen = 0
+// let start = 0
+
+// while(j <= len){
+//     if((j < len && str.charAt(j) !== ' ') || j === len){
+//         j++
+//     }else{
+//         let currentLen = j - i
+//         if(currentLen > maxLen){
+//             maxLen = currentLen
+//             start = i
 //         }
+//         j++
+//         i = j
+//     }
 // }
-// maxWord = str.substring(max_start, max_start + max_length);
-// console.log(maxWord);
+// maxword = str.substring(start, start + maxLen)
+// console.log(maxword);
 
 
 // Write a program to sort characters in a string
 
-// First Approach 
+// First Approach
 
-//   var str = "hello";
-//   var result = str.split('').sort().join('');
-//   console.log(result);
-  
+// var str = "helloworld"
 
-// Second Approach
+// var result = str.split('').sort().join('')
+// console.log(result);
 
+// var chArra = str.split('')
 
-// var str = "helleo";
-// var charArray = str.split('');
-// for (var i = 0; i < charArray.length - 1; i++) {
-//   for (var j = i + 1; j < charArray.length; j++) {
-//     if (charArray[i] > charArray[j]) {
-//       var temp = charArray[i];
-//       charArray[i] = charArray[j];
-//       charArray[j] = temp;
+// for (let i = 0; i < chArra.length -1; i++) {
+//     for (let j = i+1; j < chArra.length; j++) {
+//        if(chArra[i] > chArra[j]){
+//         let temp = chArra[i]
+//         chArra[i] = chArra[j]
+//         chArra[j] = temp
+//        }
 //     }
-//   }
 // }
-// var sortedString = charArray.join('');
-// console.log(sortedString);
-  
+
+// console.log(chArra.join(''));
+
+
+
+// Count the number of words in a given string
+
+
+// let str = "This is a good boy"
+
+// let result = str.split(' ').filter(word => { return word.length > 0 }).length 
+
+//  console.log(result);
+
+
+// let count = 0
+// let wordcheck = false
+
+// for(let ch of str){
+//     if(/\w/.test(ch)){
+//         if(!wordcheck){
+//             wordcheck = true
+//             count++
+//         }
+//     }else{
+//         wordcheck = false
+//     }
+// }
+// console.log(count);
+
+
+// Integer to roman
+
+// let dict = ['M', "CM", "D", "CD", "C","XC", "L","XL","X","IX","V","IV","I"]
+// let index = [1000,900,500,400,100,90,50,40,10,9,5,4,1]
+// let num = 832
+// let res =""
+
+// for (let i = 0; num !== 0; i++) {
+//     debugger
+//     {
+//         while (num >= index[i]) {
+//             num -= index[i]
+//             res += dict[i]
+//         }
+//     }
+// }
+
+// console.log(res);
+
+// Convert Number to Roman 
+
+// let num = 18
+//     const romanMap = new Map([
+//       [1000, "M"],
+//       [900, "CM"],
+//       [500, "D"],
+//       [400, "CD"],
+//       [100, "C"],
+//       [90, "XC"],
+//       [50, "L"],
+//       [40, "XL"],
+//       [10, "X"],
+//       [9, "IX"],
+//       [5, "V"],
+//       [4, "IV"],
+//       [1, "I"]
+//     ]);
+
+//     let out = ""
+
+//     for(let [val, symbol] of romanMap){
+//       while(num >= val){
+//         out += symbol
+//         num -= val
+//       }
+//     }
+
+
+// console.log(out);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Count the number of words in a given string
 
@@ -2084,7 +2131,7 @@
 // let result=  str.split(/\s+/).filter((word) => {
 //       return word.length > 0;
 //     }).length;
-  
+
 // console.log(result);
 
 // Second Approach
@@ -2375,7 +2422,7 @@
 
 
 // const arr = str.split(",")
- 
+
 // console.log(arr);
 
 
@@ -2476,7 +2523,7 @@
 // )
 
 // console.log(result === num);
- 
+
 
 // Square root 
 
@@ -2538,3 +2585,126 @@
 // console.log(num.toString().split('0').join('1'));
 
 // console.log(num.toString().replace(/0/g, '1'));
+
+
+
+
+// Find the largest word in a String
+
+// let str = "This code is little different from other"
+
+// let result =  str.split(' ').reduce((largest, current) => {
+//     return current.length > largest.length ? current : largest
+// },'')
+
+// console.log(result);
+
+
+
+
+
+
+// Replace characters by next character
+
+// let str = "Hello"
+
+// let result = str.replace(/[a-zA-Z]/g, (ch) => {
+//     return String.fromCharCode(ch.charCodeAt(0) + (ch < 'z' ? 1 : -25))
+// })
+
+// console.log(result);
+
+// 2-D Array
+
+// const array = Array.from({length: 5}, () => Array(5).fill(2))
+
+// console.log(array);
+
+
+
+
+// Count the number of words in a given string
+
+
+// let str = "This is a good boy fg"
+
+// let result = str.split(' ').filter(word => { return word.length > 0 }).length 
+
+//  console.log(result);
+
+
+// Maximum from Array 
+
+// let arr = [1,20,3,4]
+
+// console.log(Math.max(...arr));
+
+
+// Capitalize String
+
+// let str = 'hello world'
+
+
+// console.log(
+//   str.replace(/\b\w/g,
+//     (st) => st.toUpperCase())
+// )
+
+
+// Remove duplicates from an array
+
+// let arr = [1,2,3,4,32,5,4,5,3,4,5,4,3,2,67]
+
+// uniqueArray = [...new Set(arr)];
+// console.log(uniqueArray);
+
+
+// Check if a string is a palindrome
+
+// let str = "abagbaba"
+
+// console.log(
+// str === str.split('').reverse().join(''));
+
+
+// Check if an object is empty
+
+// let  obj = {}
+
+// console.log(Object.keys(obj).length)
+
+
+// Create an array of unique values from two arrays
+
+// let arr1 = [1,2,3,4,5,4,3,2,1,2,3,4,5,6,7,6,5,4,3]
+
+// let arr2 = [3,4,5,6,7,6,5,4,5,6,7,8,9,0,9,8,7,6,5,6,7,89,90,0,34]
+
+//  let result = [...new Set([...arr1, ...arr2])];
+
+// console.log(result);
+
+
+// Find the index of the occurrence of a value in an array
+
+// let arr = [1,2,3,4,5,4,3,2,1,2,3,4,5,6,7,6,5,4,3]
+
+// console.log(
+//   arr.indexOf(2));
+// console.log(
+//   arr.lastIndexOf(2)
+// );
+
+// Check if a number is an integer
+
+// console.log(Number.isInteger(5.6));
+
+// Flatten an array of arrays
+
+// let arr1 = [1,2,[3,4,5],4,3,2,[1,2,3,4],5,6,7,[6,5,4],3]
+
+// console.log(
+//   [].concat(...arr1)
+// );
+
+
