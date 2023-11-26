@@ -2122,46 +2122,6 @@
 
 
 
-// Count the number of words in a given string
-
-// let str = "the good boys"
-
-// First Approach
-
-// let result=  str.split(/\s+/).filter((word) => {
-//       return word.length > 0;
-//     }).length;
-
-// console.log(result);
-
-// Second Approach
-
-//     var count = 0;
-//     var isWord = false;
-//     for (var char of str) {
-//       if (/\w/.test(char)) {
-//         if (!isWord) {
-//           isWord = true;
-//           count++;
-//         }
-//       } else {
-//         isWord = false;
-//       }
-//     }
-// console.log(count);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2514,7 +2474,7 @@
 
 // let num = 145
 
-// const numstr = 
+// const numstr =
 //     num.toString()
 // const result = numstr.split('').reduce((acc, digit) =>
 //     parseInt(acc) + Array.from({ length: digit },
@@ -2525,7 +2485,7 @@
 // console.log(result === num);
 
 
-// Square root 
+// Square root
 
 // const num = 15
 
@@ -2545,7 +2505,7 @@
 
 // console.log(res);
 
-// Absolute 
+// Absolute
 
 // const n = -3
 // console.log(Math.abs(n));
@@ -2628,12 +2588,12 @@
 
 // let str = "This is a good boy fg"
 
-// let result = str.split(' ').filter(word => { return word.length > 0 }).length 
+// let result = str.split(' ').filter(word => { return word.length > 0 }).length
 
 //  console.log(result);
 
 
-// Maximum from Array 
+// Maximum from Array
 
 // let arr = [1,20,3,4]
 
@@ -2707,4 +2667,155 @@
 //   [].concat(...arr1)
 // );
 
+
+// Convert an array of strings to uppercase
+
+// let arr = ["sunny", "code"]
+
+// console.log(
+//     arr.map(str => str.toUpperCase())
+// );
+
+// Check if an array is sorted
+
+// let arr = [1, 2, 3, 4, 5, 6, 7]
+
+// console.log(
+//   arr.every(
+//     (value, index, arr) => index === 0 || value >=
+//     arr[index - 1])
+// );
+
+// Remove false values from an array
+
+// let arr = [true, true, false, true, false]
+
+// console.log(
+//   arr.filter(Boolean)
+// );
+
+
+
+// Get the current date in a specific format
+
+// const options = {
+//   weekday: "long",
+//   year: "numeric",
+//   month: "long",
+//   day: "numeric",
+// };
+// console.log(
+//   new Date().toLocaleDateString('en-US' , options)
+//   );
+
+// Check if an array has duplicates
+
+// let arr = [1,2,3,4,5,6,8]
+
+// console.log(
+// new Set(arr).size === arr.length);
+
+
+// Find the intersection of two arrays
+
+// let arr1 = [1, 2, 3, 4, 5, 6, 7, 7, 9]
+
+// let arr2 = [2, 3, 4, 5, 6, 7, 12, 9, 0]
+
+// console.log(
+//   arr1.filter(value => arr2.includes(value))
+// );
+
+
+// Determine if a number is a prime number
+
+// let n = 13
+
+// console.log(
+// n > 1 &&
+//  Array.from({ length: Math.floor(Math.sqrt(n)) }, (_, i) => i + 2)
+//  .every(divisor => n % divisor !== 0)
+// );
+
+
+// Shuffle an array
+
+// let arr = [1, 2, 3, 4, 5]
+
+// console.log(
+//     arr.sort(() => Math.random() - 0.5)
+// );
+
+// Check if a year is a leap year
+
+// let year = 2001
+
+// console.log(
+//     (year % 4 === 0
+//         &&
+//     year % 100 !== 0)
+//     ||
+//     (year % 400 === 0)
+// );
+
+// Remove all whitespace from a string
+
+// let str = " hello world"
+
+// console.log(
+// str.replace(/\s/g, '')
+// );
+
+// console.log(
+// str.replace(/\s+/g, '')
+// );
+
+// Generate a range of numbers between two values
+
+// let start = 5
+// let end = 10
+
+// console.log(
+//     Array.from({ length: end - start + 1 }, (_, i) => start + i)
+// );
+
+// Rotate elements in an array to the right
+
+// let arr = [1, 2, 3, 4, 5]
+// arr.unshift(
+//     arr.pop()
+// )
+// console.log(arr);
+
+// Create an object from key-value pairs
+
+// console.log(
+//     Object.fromEntries(
+//         [
+//             ['key1', 'value1'], ['key2', 'value2'], ['key3', 'value3']
+//         ]
+//     )
+// );
+
+// Generate a random hexadecimal color code:
+
+// console.log(
+
+// `#${Math.floor(Math.random()*16777215).toString(16)}`
+// );
+
+// Calculate the sum of squared values in an array
+
+// let arr = [1, 2, 3]
+
+// console.log(
+//     arr.reduce(
+//         (sum, num) => sum + num ** 2, 0));
+
+// Count the occurrences of each element in an array
+
+// let arr = [1, 2, 3, 4, 5, 6, 5, 4, 3, 7, 8, 6, 5, 3]
+
+// console.log(
+//     arr.reduce((acc, val) => (acc[val] = (acc[val] || 0) + 1, acc), {}));
 
