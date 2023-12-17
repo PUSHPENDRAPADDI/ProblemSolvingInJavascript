@@ -1325,7 +1325,7 @@
 // while (num > 0) {
 //     sum += num % 10
 //     num = Math.floor(num / 10)
-// 
+//
 // let str = num.toString()
 // for (let i = 0; i < str.length; i++) {
 //     sum += parseInt(str[i])
@@ -1370,7 +1370,7 @@
 //     num = Math.floor(num / 10)
 // }
 // let digit = Array.from(String(num), Number)
-// console.log(digit.reduce((sum, digit) => 
+// console.log(digit.reduce((sum, digit) =>
 //  sum + digit, 0 ));
 
 
@@ -1562,7 +1562,7 @@
 
 // // out = str.replace(/[)(]/g, '')
 
-// for (let i = 0; i < str.length; i++) {    
+// for (let i = 0; i < str.length; i++) {
 //     if(str.charAt(i) !== ')' && str.charAt(i) !== '('){
 //         out += str.charAt(i)
 //     }
@@ -1678,7 +1678,7 @@
 
 // const str = "Hello world"
 
-// first Approach 
+// first Approach
 
 // const obj = {}
 
@@ -1716,7 +1716,7 @@
 
 // let obj1 = {}
 // let obj2 = {}
-// let flag = true 
+// let flag = true
 
 //  for(let ch of str1){
 //     obj1[ch] = (obj1[ch] || 0) + 1
@@ -1983,7 +1983,7 @@
 
 // let str = "This is a good boy"
 
-// let result = str.split(' ').filter(word => { return word.length > 0 }).length 
+// let result = str.split(' ').filter(word => { return word.length > 0 }).length
 
 //  console.log(result);
 
@@ -2023,7 +2023,7 @@
 
 // console.log(res);
 
-// Convert Number to Roman 
+// Convert Number to Roman
 
 // let num = 18
 //     const romanMap = new Map([
@@ -2053,6 +2053,169 @@
 
 
 // console.log(out);
+
+
+
+// Find word with highest number of repeated letters in string
+
+
+// const str = "apple banana orange strawbrry kiwoooooooooi"
+
+// const word = str.split(" ")
+
+// const result = word.reduce((maxWord, currenWord) => {
+//     const repeatCount = currenWord.split('').filter((ch, index, array) => array.indexOf(ch) !== index).length
+//     return repeatCount > maxWord.count ? { word: currenWord, count : repeatCount } :
+//     maxWord
+// }, {word:'', count: 0})
+
+// console.log(result.word);
+
+
+
+// const word = str.split(/\s+/)
+
+// let maxCount = 0
+// let maxStr = ''
+// for (const w of word) {
+//     const charCount = new Map();
+//     let repeatCount = 0;
+//     for (const ch of w) {
+//         charCount.set(ch, (charCount.get(ch) || 0) + 1)
+//         repeatCount = Math.max(repeatCount, charCount.get(ch))
+//     }
+//     if (repeatCount > maxCount) {
+//         maxCount = repeatCount
+//         maxStr = w
+//     }
+// }
+
+// console.log(maxStr);
+
+
+// Change case of each character in a string
+
+// A-Z = 65 - 90
+// a-z = 97 - 122
+
+let str1 = "Hello World"
+
+// let result1 = ''
+
+// for(let i = 0; i < str1.length; i++){
+//     let charCode = str1.charCodeAt(i)
+//     result1 += (charCode >= 65 && charCode <= 90) ?
+//     String.fromCharCode(charCode + 32) :
+//     (charCode >= 97 && charCode <= 122) ?
+//     String.fromCharCode(charCode - 32)
+//     : str1[i]
+// }
+// console.log(result1);
+
+
+// Second Approach
+
+// console.log(str1.replace(/./g, char => (char === char.toUpperCase() ?
+//     char.toLowerCase() : char.toUpperCase())));
+
+
+// console.log(str1
+//     .split('')
+//     .map(char => (char === char.toUpperCase() ? char.toLowerCase :
+//     char.toUpperCase())).join(''));
+
+// ;
+
+
+
+// Find the Position of a Substring within a String
+
+// const mainString= "Hello, world"
+// const subStr = "world"
+
+// const regex = new RegExp(subStr)
+// const match = mainString.match(regex)
+
+// const match = mainString.indexOf(subStr)
+// const match = mainString.search(subStr)
+
+// console.log(match);
+
+
+
+// let N = mainString.length
+// let M = subStr.length
+// let result = -1
+
+// for(let i = 0 ; i< N; i++){
+//     let temp = i;
+//     let j = 0;
+//     for (j = 0; j < M; j++) {
+//         if(mainString[temp] != subStr[j]){
+//             break;
+//         }
+//         temp++;
+//     }
+//     if(j === M){
+//         result = i
+//     }
+// }
+
+// console.log(result);
+
+
+// Reverse Words in a String
+
+// let str = "Hello World abssfdsfs sdfdsf"
+// let temp = ''
+// let result = ''
+// result = str.split(' ').reduce((revers, word) => word + " " + revers, '').trim()
+
+
+// for (let i = str.length-1; i >= 0; i--) {
+//     if (str[i] === ' ') {
+//         result += temp.split('').reverse().join('') + ' '
+//         temp = ""
+//     } else {
+//         temp += str[i]
+//     } if (i === 0) {
+//         result += temp.split('').reverse().join('')
+//         temp = ''
+//     }
+// }
+
+// console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
