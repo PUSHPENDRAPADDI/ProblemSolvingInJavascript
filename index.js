@@ -2187,8 +2187,58 @@ let str1 = "Hello World"
 // console.log(result);
 
 
+// Conversion Of Numbers ##########################
 
 
+// Binary To Decimal Conversion
+
+// var binaryNumber = '1101'
+// var decimalNumber = 0
+
+// var binaryLength = binaryNumber.length
+// for (let i = 0; i < binaryLength; i++) {
+//     var digit = parseInt(binaryNumber[i])
+//     var power = binaryLength - i - 1
+//     decimalNumber += digit* Math.pow(2, power)
+// }
+
+// console.log(decimalNumber);
+
+// Second approach 
+
+// var decimal = parseInt(binaryNumber, 2)
+// console.log(decimal);
+
+// Third Approach
+
+// var result  = binaryNumber.split('').reverse().reduce(function (acc,digit, index){
+//     return acc + parseInt(digit) * Math.pow(2,index)
+// }, 0);
+
+// console.log(result);
+
+// Convert Binary to Octal
+
+// let binaryNumber = '1101101'
+
+
+// let decimal = parseInt(binaryNumber, 2)
+// console.log(decimal.toString(8));
+
+
+
+
+// let result = ''
+// while (binaryNumber.length %3 !== 0) {
+//     binaryNumber = '0' + binaryNumber
+// }
+
+// for (let i = 0; i < binaryNumber.length; i += 3) {
+//     let threeDigits = binaryNumber.slice(i, i+ 3)
+//     let decimal = parseInt(threeDigits, 2)
+//     result += decimal.toString(8)
+// }
+// console.log(result);
 
 
 
