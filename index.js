@@ -3032,3 +3032,165 @@ let str1 = "Hello World"
 // console.log(
 //     arr.reduce((acc, val) => (acc[val] = (acc[val] || 0) + 1, acc), {}));
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Regex Regular Expresion
+
+// Regex provide a powerful and flexible way to search, match, and manipulate text
+// You can create a regular expression using a literal notation 
+// enclosed in slashes /.../modifiers or the RegExp constructor.
+
+// :- g  global
+// :- i  case-insensitive
+// :- m  multiline matching
+// aeiou pttern
+//  /aeiou/
+//  /aeiou/g
+
+// let regex = /abc/g
+// let regex = new RegExp('abc')
+// console.log(regex);
+
+// let regex = /Hello/i
+
+// let str = "hll Owrld"
+// console.log(regex.test(str));
+
+// let reg = /[aeiou]/i 
+// console.log(reg.test(str));
+
+
+
+// Brackets in Regex
+
+// [] () {}
+
+
+// ^
+// let str = 'hllr'
+// let regex = /[aeiou]/
+
+// let str = 'abcdd56ABC54'
+
+// let regex = /[0-4]/
+// let regex = /[^t - z]/
+
+// let regex = /[a-zA-Z0-9]/
+
+
+// console.log(regex.test(str));
+
+// (x|y)
+
+// let regex = /(red|blue|green) car/
+// let str = 'I like red car'
+// console.log(regex.test(str));
+
+
+
+// MetaCharacters 
+
+
+// let regex = /^abc$/gm
+// let reg = /car\rriage/
+
+// let text = `
+// aabc
+// dsfsabcdryy
+// sabc
+// yy
+// sabc123
+// carriage
+// `
+
+// console.log(reg.test(text));
+
+
+// The RegExp \r Metacharacter in JavaScript is used to find the carriage return character(Carriage return means to return to the beginning of the current line without advancing downward). If it is found it returns the position else it returns - 1.
+
+
+// let text = "Visit W3Schools.Learn JavaScript.";
+// let pattern = /\r/;
+// let result = text.search(pattern);
+
+
+// console.log(result);
+
+
+
+// let  str = ' asd Hello Hello ji'
+// let regex = /(Hello)\s\1/
+
+// console.log(str.match(regex));
+
+
+
+// Email Validate 
+
+// let email = 'codeKaroge123@gmail.com'
+// let regex = /^[^\s@A-Z]+@[^\s@0-9]+\.[^\s@]+$/
+// console.log(regex.test(email));
+
+
+// Password Validation
+
+// let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$%&?#*])[A-Za-z\d@$%#&?*]{7,}$/
+
+// console.log(regex.test('aA1#asdwertf'));
+
+
+// UserName Validation
+
+
+// const str = 'abc_123'
+// const reg = /^[a-zA-Z0-9_]{3,16}$/
+
+// console.log(reg.test(str));
+
+
+
+
+// Url Validation
+
+
+// const url = 'ftp:/chat.openai.com/c/36a084c0-776a-4255-8598-ac0c34679976'
+
+// const regex = /^(https?|http?|ftp):\/\/[^\s/$.?#].[^\s]*$/;
+// console.log(regex.test(url));
+
+
+
+// Date Formatter
+
+// const date = '0001-12-31'
+
+// const regex = /^(?:(?!0000)[0-9]{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|1\d|2[0-9]|3[01]))$/
+
+// console.log(regex.test(date));
+
+
+
+// Phone number validation
+
+
+// const phon = '+011234567'
+// const regex = /^(?:[\+0-9]?)[0-9]{6,14}$/
+// console.log(regex.test(phon));
