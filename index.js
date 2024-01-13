@@ -2243,6 +2243,44 @@ let str1 = "Hello World"
 
 
 
+// Convert Decimal to Binary Number
+
+
+// let decimal = 10
+// let binary = ''
+
+// while (decimal > 0) {
+//     binary = (decimal % 2) + binary
+//     decimal = Math.floor(decimal / 2);
+// }
+// console.log(binary);
+
+
+// Second Approach
+
+// function decimalConversion(decimal){
+//     debugger
+//     if(decimal === 0){
+//         return ''
+//     }else{
+//         return decimalConversion(Math.floor(decimal / 2)) + (decimal % 2).toString()
+//     }
+// }
+
+// let decimalNum = 10
+// console.log(decimalConversion(decimalNum));
+
+
+// Third approach
+
+// console.log(decimalNum.toString(2));
+
+
+
+
+
+
+
 
 
 
@@ -3055,7 +3093,7 @@ let str1 = "Hello World"
 // Regex Regular Expresion
 
 // Regex provide a powerful and flexible way to search, match, and manipulate text
-// You can create a regular expression using a literal notation 
+// You can create a regular expression using a literal notation
 // enclosed in slashes /.../modifiers or the RegExp constructor.
 
 // :- g  global
@@ -3074,7 +3112,7 @@ let str1 = "Hello World"
 // let str = "hll Owrld"
 // console.log(regex.test(str));
 
-// let reg = /[aeiou]/i 
+// let reg = /[aeiou]/i
 // console.log(reg.test(str));
 
 
@@ -3106,7 +3144,7 @@ let str1 = "Hello World"
 
 
 
-// MetaCharacters 
+// MetaCharacters
 
 
 // let regex = /^abc$/gm
@@ -3143,7 +3181,7 @@ let str1 = "Hello World"
 
 
 
-// Email Validate 
+// Email Validate
 
 // let email = 'codeKaroge123@gmail.com'
 // let regex = /^[^\s@A-Z]+@[^\s@0-9]+\.[^\s@]+$/
