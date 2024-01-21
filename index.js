@@ -2278,6 +2278,183 @@ let str1 = "Hello World"
 
 
 
+// Convert Decimal to Octal
+
+
+// let decimalNum = 42
+
+// console.log(decimalNum.toString(8));
+
+// let octalNum = ''
+// while (decimalNum >0 ) {
+//     debugger
+//     octalNum = (decimalNum % 8).toString() + octalNum
+//     decimalNum = Math.floor(decimalNum / 8)
+// }
+// console.log(octalNum);
+
+
+// Octal to binary Conversion
+
+// let octalNum = '12'
+// let decimal = parseInt(octalNum, 8)
+
+// console.log(decimal.toString(2));
+
+// for (let i = 0; i < octalNum.length; i++) {
+//     let octalDigit = parseInt(octalNum[i], 8)
+//     for (let j = 2; j >= 0; j--) {
+//         binaryNum += (octalDigit & (1 << j)) ? '1' : '0'
+//     }
+// }
+
+// console.log(binaryNum);
+
+
+// Convert Octal to Decimal
+
+// let octalNum = '755'
+
+// let deciamlOut = [...octalNum].reduce((decimal, digit) =>
+//     decimal * 8 + parseInt(digit, 10), 0)
+// console.log(deciamlOut);
+
+
+// console.log(parseInt(octalNum, 8));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Convert digits/numbers to words
+
+// const ones = {
+//   0: "zero",
+//   1: "one",
+//   2: "two",
+//   3: "three",
+//   4: "four",
+//   5: "five",
+//   6: "six",
+//   7: "seven",
+//   8: "eight",
+//   9: "nine",
+//   10: "ten",
+//   11: "eleven",
+//   12: "twelve",
+//   13: "thirteen",
+//   14: "fourteen",
+//   15: "fifteen",
+//   16: "sixteen",
+//   17: "seventeen",
+//   18: "eighteen",
+//   19: "nineteen",
+// };
+
+// const prefixes = {
+//   2: "twenty",
+//   3: "thirty",
+//   4: "fourty",
+//   5: "fifty",
+//   6: "sixty",
+//   7: "seventy",
+//   8: "eighty",
+//   9: "ninety",
+// };
+// const nums = '1234'
+// let outputData = 0
+
+// const onatad = (num) => {
+//   debugger
+//   if (+num in ones) {
+//     outputData = ones[+num];
+//   }
+//   const numArray = num.split("");
+//   if (numArray.length === 2 && +num > 19) {
+//     outputData = prefixes[numArray[0]] + " " + ones[numArray[1]];
+//   }
+//   if (numArray.length === 3) {
+//     if (+numArray[1] === 0) {
+//       outputData =
+//         ones[numArray[0]] + " hundred " + " " + ones[numArray[2]];
+//     } else if (+numArray[1] < 2) {
+//       outputData =
+//         ones[numArray[0]] +
+//         " hundred " +
+//         " " +
+//         ones[+[numArray[1], numArray[2]].join("")];
+//     } else {
+//       outputData =
+//         ones[numArray[0]] +
+//         " hundred " +
+//         prefixes[numArray[1]] +
+//         " " +
+//         ones[numArray[2]];
+//     }
+//   }
+//   if (numArray.length === 4) {
+//     if (+numArray[1] === 0) {
+//       outputData =
+//         ones[numArray[0]] +
+//         " thousand " +
+//         " " +
+//         ones[+[numArray[2], numArray[3]].join("")];
+//     } else if (+numArray[1] < 2) {
+//       outputData =
+//         ones[numArray[0]] +
+//         " thousand " +
+//         ones[numArray[1]] +
+//         " hundred " +
+//         " " +
+//         ones[+[numArray[2], numArray[3]].join("")];
+//     } else {
+//       outputData =
+//         ones[numArray[0]] +
+//         " thousand " +
+//         ones[numArray[1]] +
+//         " hundred " +
+//         prefixes[numArray[2]] +
+//         " " +
+//         ones[numArray[3]];
+//     }
+//   }
+//   return outputData
+// };
+
+// console.log(onatad(nums));
+
+
+
+
+let data = [1, 2, 3, 4, 3]
+// let set = new Set(data)
+let map = new Map();
+for (let i = 0; i < data.length; i++) {
+  map.set()
+}
+
+console.log(!(set.size === data.length));
+
 
 
 
