@@ -2323,6 +2323,267 @@ let str1 = "Hello World"
 // console.log(parseInt(octalNum, 8));
 
 
+// Convert digits/numbers to words
+
+// const ones = {
+//     0: "zero",
+//     1: "one",
+//     2: "two",
+//     3: "three",
+//     4: "four",
+//     5: "five",
+//     6: "six",
+//     7: "seven",
+//     8: "eight",
+//     9: "nine",
+//     10: "ten",
+//     11: "eleven",
+//     12: "twelve",
+//     13: "thirteen",
+//     14: "fourteen",
+//     15: "fifteen",
+//     16: "sixteen",
+//     17: "seventeen",
+//     18: "eighteen",
+//     19: "nineteen",
+// };
+// const prefixes = {
+//     2: "twenty",
+//     3: "thirty",
+//     4: "fourty",
+//     5: "fifty",
+//     6: "sixty",
+//     7: "seventy",
+//     8: "eighty",
+//     9: "ninety",
+// };
+// const digitToString = (num) => {
+//     let output = 0
+//     const numArray = num.split('')
+//     if (+num in ones) {
+//         output = ones[+num]
+//     } else if (numArray.length === 2 && +num > 19) {
+//         output = prefixes[numArray[0]] + " " + ones[numArray[1]]
+//     } else if (numArray.length === 3) {
+//         if (+numArray[1] === 0) {
+//             output = ones[numArray[0]] + " hundered " + ones[numArray[2]]
+//         } else if (+numArray[1] < 2) {
+//             output = ones[numArray[0]] + " hundered " + ones[+[numArray[1], numArray[2]].join("")]
+//         } else {
+//             output =
+//                 ones[numArray[0]] + " hundred " + prefixes[numArray[1]] + " " + ones[numArray[2]]
+//         }
+//     } else if (numArray.length === 4) {
+//         if (+numArray[1] === 0) {
+//             output = ones[numArray[0]] + " thousand " +
+//                 ones[+[numArray[2], numArray[3]].join('')]
+//         } else if (+numArray[1] < 2) {
+//             output =
+//                 ones[numArray[0]] +
+//                 " thousand " + ones[numArray[1]] +
+//                 " hundred " +
+//                 ones[+[numArray[2], numArray[3]].join('')]
+//         } else {
+//             output =
+//                 ones[numArray[0]] + " thousand " + ones[numArray[1]] +
+//                 " hundred " +
+//                 prefixes[numArray[2]] +
+//                 " " +
+//                 ones[numArray[3]]
+//         }
+//     } else if (numArray.length === 5) {
+//         if (+numArray[4] === 0 && +numArray[3] === 0 && +numArray[2] === 0) {
+//             if (+[numArray[0], numArray[1]].join('') <= 19) {
+//                 output = ones[+[numArray[0], numArray[1]].join('')] + " thousand "
+//             } else if (+[numArray[0], numArray[1]].join('') > 19 && +numArray[1] !== 0) {
+//                 output = prefixes[numArray[0]] + ones[numArray[1]] + " thousand "
+//             } else {
+//                 output = prefixes[numArray[0]] + " thousand "
+//             }
+//         }
+//         else if (+[numArray[0], numArray[1]].join('') <= 19 && +numArray[3] < 2 && +numArray[2] === 0) {
+//             output = ones[+[numArray[0], numArray[1]].join('')] + " thousand " +
+//                 ones[+[numArray[3], numArray[4]].join("")]
+//         }
+//         else if (+[numArray[0], numArray[1]].join('') <= 19 && +numArray[3] < 2) {
+//             output = ones[+[numArray[0], numArray[1]].join('')] + " thousand " +
+//                 ones[numArray[2]] + " hundered " + ones[+[numArray[3], numArray[4]].join("")]
+//         }
+//         else if (+[numArray[0], numArray[1]].join('') <= 19 && +numArray[3] > 1 && +numArray[2] === 0) {
+//             output = ones[+[numArray[0], numArray[1]].join('')] + " thousand " +
+//                 prefixes[numArray[3]] + " " + ones[+numArray[4]]
+//         }
+//         else if (+[numArray[0], numArray[1]].join('') <= 19 && +numArray[3] > 1) {
+//             output = ones[+[numArray[0], numArray[1]].join('')] + " thousand " +
+//                 ones[numArray[2]] + " hundered " + prefixes[numArray[3]] + " " + ones[+numArray[4]]
+//         }
+//         else if (+[numArray[0], numArray[1]].join('') > 19 && +numArray[3] < 2 && +numArray[2] === 0) {
+//             if (+numArray[1] === 0) {
+//                 output = prefixes[numArray[0]] + " thousand " +
+//                     ones[+[numArray[3], numArray[4]].join("")]
+//             } else {
+//                 output = prefixes[numArray[0]] + ones[numArray[1]] + " thousand " +
+//                     ones[+[numArray[3], numArray[4]].join("")]
+//             }
+//         }
+//         else if (+[numArray[0], numArray[1]].join('') > 19 && +numArray[3] < 2) {
+//             if (+numArray[1] === 0) {
+//                 output = prefixes[numArray[0]] + " thousand " +
+//                     ones[numArray[2]] + " hundered " + ones[+[numArray[3], numArray[4]].join("")]
+//             } else {
+//                 output = prefixes[numArray[0]] + ones[numArray[1]] + " thousand " +
+//                     ones[numArray[2]] + " hundered " + ones[+[numArray[3], numArray[4]].join("")]
+//             }
+//         }
+//         else if (+[numArray[0], numArray[1]].join('') > 19 && +numArray[3] > 1 && +numArray[2] === 0) {
+//             if (+numArray[1] === 0) {
+//                 output = prefixes[numArray[0]] + " thousand " +
+//                     prefixes[numArray[3]] + " " + ones[+numArray[4]]
+//             } else {
+//                 output = prefixes[numArray[0]] + ones[numArray[1]] + " thousand " +
+//                     prefixes[numArray[3]] + " " + ones[+numArray[4]]
+//             }
+//         }
+//         else if (+[numArray[0], numArray[1]].join('') > 19 && +numArray[3] > 1) {
+//             if (+numArray[1] === 0) {
+//                 output = prefixes[numArray[0]] + " thousand " +
+//                     ones[numArray[2]] + " hundered " + prefixes[numArray[3]] + " " + ones[+numArray[4]]
+//             } else {
+//                 output = prefixes[numArray[0]] + ones[numArray[1]] + " thousand " +
+//                     ones[numArray[2]] + " hundered " + prefixes[numArray[3]] + " " + ones[+numArray[4]]
+//             }
+//         }
+//     }
+//     return output
+// }
+// console.log(digitToString('34341'));
+
+// bubble Sort
+
+// a = 5
+// b = 10
+// a = a + b
+// b = a - b
+// a = a - b
+
+// let arr = [5, 4, 3, 7, 6]
+
+// for (let i = 0; i < arr.length - 1; i++) {
+//     for (let j = 0; j < arr.length; j++) {
+//         if (arr[j] > arr[j + 1]) {
+//             arr[j] = arr[j] + arr[j + 1]
+//             arr[j + 1] = arr[j] - arr[j + 1]
+//             arr[j] = arr[j] - arr[j + 1]
+//         }
+//     }
+// }
+// console.log(arr);
+
+
+// Selection Sort
+
+
+// let arr = [3,4,5,1,2,7]
+
+// for (let i = 0; i < arr.length-1; i++) {
+//     for (let j = i+1; j < arr.length; j++) {
+//         if (arr[i] > arr[j]) {
+//             let temp = arr[i]
+//             arr[i] =arr[j]
+//             arr[j] = temp
+//         }
+//     } 
+// }
+
+// console.log(arr);
+
+
+// Insertion Sort
+
+// let arr = [7, 6, 4, 2, 8, 1]
+
+// for (let i = 0; i < arr.length; i++) {
+//     let current = arr[i]
+//     let j = i - 1
+//     while (j >= 0 && current < arr[j]) {
+//         arr[j+1] = arr[j]
+//         j--
+//     }
+//     arr[j+1] = current
+// }
+// console.log(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2381,11 +2642,11 @@ let str1 = "Hello World"
 //   8: "eighty",
 //   9: "ninety",
 // };
+
 // const nums = '1234'
 // let outputData = 0
 
 // const onatad = (num) => {
-//   debugger
 //   if (+num in ones) {
 //     outputData = ones[+num];
 //   }
@@ -2446,545 +2707,32 @@ let str1 = "Hello World"
 
 
 
-let data = [1, 2, 3, 4, 3]
+// let data = [1, 2, 3, 4]
 // let set = new Set(data)
-let map = new Map();
-for (let i = 0; i < data.length; i++) {
-  map.set()
-}
-
-console.log(!(set.size === data.length));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Shorts
-
-
-
-// Push
-
-// const num = [1,2,3,4,5]
-
-// num.push(1, 3,3,4,5,6)
-
-// console.log(num);
-
-
-// Unshift()
-
-
-// let arr = [1,2,3,4,5,6]
-
-// arr.unshift(7,8,9)
-
-// console.log(arr);
-
-
-// Pop
-
-// let arr = [1,2,3,4,5,6]
-
-// arr.pop()
-
-// const num = 3;
-// for (let i = 0; i < num; i++) {
-//   arr.pop();
+// let map = new Map();
+// for (let i = 0; i < data.length; i++) {
+//   map.has(data[i]) ? "":  map.set(data[i], i)
 // }
 
+// console.log(!(map.size === data.length) );
 
-// console.log(arr);
+// const nums = [10, 20, 30, 5, 10, 50];
+// let maxSum = 0;
+// let currentSum = 0;
 
-
-
-// shift()
-
-// let arr = [1,2,3,4,5,6]
-
-// arr.shift()
-
-// const num = 3;
-// for (let i = 0; i < num; i++) {
-//   arr.shift();
+// for (let i = 0; i < nums.length; i++) {
+//   if(i > 0 && nums[i] <= nums[i - 1]){
+//     currentSum=0
+//   }
+//   currentSum += nums[i]
+//   maxSum = Math.max(maxSum, currentSum)
 // }
+// console.log(maxSum);
 
-// console.log(arr);
 
-// Splice
-
-// Array.splice(startIndex, deleteCount, item1, item2,..)
-
-
-// const arr = [1,2,3,4,5,6]
-
-// arr.splice(2, 2,9,8,7,10)
-
-// console.log(arr);
-
-
-// fill()
-
-// const arr = new Array(10)
-
-// arr.fill(1)
-
-
-
-// let arr = [1,2,3,4,5,6]
-
-// arr.fill(10, 1, 4)
-
-
-// console.log(arr);
-
-
-// Palindrome number
-
-// let num = -1234
-// let rev = parseFloat(num.toString()
-// .split('').reverse().join('')
-// )* Math.sign(num)
-
-// console.log(rev);
-
-// Array.from()
-
-// const num = 5
-
-// console.log(Array.from(
-//     {length: num},
-//      (_, i)=> i + 1
-// ));
-
-
-// Factorial of num
-
-// const num = 5
-
-// console.log(
-//     Array.from({length:num},
-//         (_, i)=> i + 1).reduce
-//         ((acc, j) => acc*j)
-// );
-
-// Factors of number
-
-// const num = 9
-
-// console.log(
-// Array.from({length: num},
-//     (_,i)=> i +1).filter(
-//         (i)=> num % i === 0
-//     )
-//     );
-
-
-
-
-
-// Objects in javascripts
-
-// class Phone {
-//     constructor(brand, model, country) {
-//         this.brand = brand;
-//         this.model = model,
-//             this.country = country
-//     }
-// }
-// const phone1 = new Phone("Iphone", "5", "USA")
-// const phone2 = new Phone("Micromax", "i2", "INDIA")
-// const phone3 = new Phone("Realme", "5i", "China")
-// console.log(phone1, phone2, phone3);
-
-// console.table({phone1,phone2,phone3})
-
-
-// Count in console
-
-// console.count("a")
-// console.count("a")
-// console.count("b")
-// console.count("b")
-
-
-// for (let i = 0; i < 5; i++) {
-//    console.count("i")
-// }
-
-// console table
-
-// const train = {
-//     name: "Delhi Express",
-//     start: "lko"
-// }
-
-// console.table(train)
-// console.clear()
-
-// const train2 = {
-//     name: "Mumbai Express",
-//     start: "Delhi"
-// }
-
-// console.table([train, train2])
-
-// console.clear()
-// const train1 = [train,train2]
-// console.table(train1, "start")
-
-// const num = 1
-
-// if(isNaN(num)){
-//     console.log(typeof num,"Not a number");
-// }else{
-//     console.log(typeof num,"Is number");
-// }
-
-// Merge 2 array
-
-// const a  = [1,2]
-// const b = [3,4]
-
-
-// const c = [...a, ...b]
-// console.log(c)
-
-// Convert  array to String
-
-// const names = ["Peter", "Parker", "Tony"]
-
-// const str = names.toString()
-
-// console.log(str);
-
-// Convert String to array
-
-// const str = "Peter, Parker, Tony"
-
-
-// const arr = str.split(",")
-
-// console.log(arr);
-
-
-// GetCountryCd
-
-// let regionName = new Intl.DisplayNames(['En'],
-// {type:'region'});
-
-// let countryCode = 'ID'
-
-// // "ID", IN, UK
-
-// console.log(regionName.of(countryCode));
-
-// Cut last n characters or elements
-
-// const num = [1, 2, 3, 4, 5, 6]
-// const n = num.slice(-3)
-
-// console.log(n);
-
-// let lesson = "Javascript"
-// let l = lesson.slice(-1)
-
-// console.log(l);
-
-// Change arr length
-
-// const a = [1,2,3,4,5]
-// a.length =13
-// console.log(a);
-
-
-// Compare 2 array
-
-// const n1 = [1,2,3]
-// const n2 = [1,2,3]
-
-// console.log(JSON.stringify(n2)  === JSON.stringify(n1))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// replace all accurrences
-
-// let text = "Hi&dfgtr&ertvf&-sdf&"
-
-// console.log(text);
-
-// let newText = text.replace("&", " ")
-// console.log(newText);
-
-
-
-
-// newText = text.replaceAll("&", " ")
-// console.log(newText);
-
-
-
-
-
-// Strong Number
-
-// 1! + 4! + 5!
-
-// let num = 145
-
-// const numstr =
-//     num.toString()
-// const result = numstr.split('').reduce((acc, digit) =>
-//     parseInt(acc) + Array.from({ length: digit },
-//         (_, i) => i + 1)
-//         .reduce((acc, cur) => acc * cur)
-// )
-
-// console.log(result === num);
-
-
-// Square root
-
-// const num = 15
-
-// console.log(Math.sqrt(num));
-
-
-// ParseInt
-// const str = '50.565'
-// console.log(typeof parseFloat( str));
-
-
-// Automorphic number
-//  5 * 5 = 25
-// const num = 4
-
-// const res = (num * num).toString().endsWith(num.toString())
-
-// console.log(res);
-
-// Absolute
-
-// const n = -3
-// console.log(Math.abs(n));
-
-// Min
-// console.log(Math.min(3,4,5,2, 1.9))
-
-// Max
-// console.log(Math.max(3,4,9,1,23, 23.5));
-
-// Sum of Digits
-
-// let num = 378
-// let sum = 0
-// sum = [...num.toString()].reduce((acc,digit) =>
-//  acc + parseInt(digit, 10), 0)
-//  console.log(sum);
-
-// Math floar
-
-// num = 0
-// num = 7 /3
-// console.log(Math.floor(num));
-
-// Sum of digits
-
-// let num = 2341
-
-// let digit = num.toString().split('').map(Number)
-
-// console.log(digit.reduce((sum, digit) => sum + digit, 0));
-
-// Replace all the 0's with 1 in a given integer
-
-// let num = 102000032
-
-// console.log(num.toString().split('0').join('1'));
-
-// console.log(num.toString().replace(/0/g, '1'));
-
-
-
-
-// Find the largest word in a String
-
-// let str = "This code is little different from other"
-
-// let result =  str.split(' ').reduce((largest, current) => {
-//     return current.length > largest.length ? current : largest
-// },'')
-
+// const allowed = "abc"
+// let words = ["a","b","c","ab","ac","bc","abc", "fgda"]
+// const result = words.filter((word) => word.split('').every(ch => allowed.indexOf(ch) !== -1)).length
 // console.log(result);
 
 
@@ -2992,260 +2740,153 @@ console.log(!(set.size === data.length));
 
 
 
-// Replace characters by next character
 
-// let str = "Hello"
 
-// let result = str.replace(/[a-zA-Z]/g, (ch) => {
-//     return String.fromCharCode(ch.charCodeAt(0) + (ch < 'z' ? 1 : -25))
-// })
 
-// console.log(result);
 
-// 2-D Array
 
-// const array = Array.from({length: 5}, () => Array(5).fill(2))
 
-// console.log(array);
 
 
 
 
-// Count the number of words in a given string
 
 
-// let str = "This is a good boy fg"
 
-// let result = str.split(' ').filter(word => { return word.length > 0 }).length
 
-//  console.log(result);
 
 
-// Maximum from Array
 
-// let arr = [1,20,3,4]
 
-// console.log(Math.max(...arr));
 
 
-// Capitalize String
 
-// let str = 'hello world'
 
 
-// console.log(
-//   str.replace(/\b\w/g,
-//     (st) => st.toUpperCase())
-// )
 
 
-// Remove duplicates from an array
 
-// let arr = [1,2,3,4,32,5,4,5,3,4,5,4,3,2,67]
 
-// uniqueArray = [...new Set(arr)];
-// console.log(uniqueArray);
 
 
-// Check if a string is a palindrome
 
-// let str = "abagbaba"
 
-// console.log(
-// str === str.split('').reverse().join(''));
 
 
-// Check if an object is empty
 
-// let  obj = {}
 
-// console.log(Object.keys(obj).length)
 
 
-// Create an array of unique values from two arrays
 
-// let arr1 = [1,2,3,4,5,4,3,2,1,2,3,4,5,6,7,6,5,4,3]
 
-// let arr2 = [3,4,5,6,7,6,5,4,5,6,7,8,9,0,9,8,7,6,5,6,7,89,90,0,34]
 
-//  let result = [...new Set([...arr1, ...arr2])];
 
-// console.log(result);
 
 
-// Find the index of the occurrence of a value in an array
 
-// let arr = [1,2,3,4,5,4,3,2,1,2,3,4,5,6,7,6,5,4,3]
 
-// console.log(
-//   arr.indexOf(2));
-// console.log(
-//   arr.lastIndexOf(2)
-// );
 
-// Check if a number is an integer
 
-// console.log(Number.isInteger(5.6));
 
-// Flatten an array of arrays
 
-// let arr1 = [1,2,[3,4,5],4,3,2,[1,2,3,4],5,6,7,[6,5,4],3]
 
-// console.log(
-//   [].concat(...arr1)
-// );
 
 
-// Convert an array of strings to uppercase
 
-// let arr = ["sunny", "code"]
 
-// console.log(
-//     arr.map(str => str.toUpperCase())
-// );
 
-// Check if an array is sorted
 
-// let arr = [1, 2, 3, 4, 5, 6, 7]
 
-// console.log(
-//   arr.every(
-//     (value, index, arr) => index === 0 || value >=
-//     arr[index - 1])
-// );
 
-// Remove false values from an array
 
-// let arr = [true, true, false, true, false]
 
-// console.log(
-//   arr.filter(Boolean)
-// );
 
 
 
-// Get the current date in a specific format
 
-// const options = {
-//   weekday: "long",
-//   year: "numeric",
-//   month: "long",
-//   day: "numeric",
-// };
-// console.log(
-//   new Date().toLocaleDateString('en-US' , options)
-//   );
 
-// Check if an array has duplicates
 
-// let arr = [1,2,3,4,5,6,8]
 
-// console.log(
-// new Set(arr).size === arr.length);
 
 
-// Find the intersection of two arrays
 
-// let arr1 = [1, 2, 3, 4, 5, 6, 7, 7, 9]
 
-// let arr2 = [2, 3, 4, 5, 6, 7, 12, 9, 0]
 
-// console.log(
-//   arr1.filter(value => arr2.includes(value))
-// );
 
 
-// Determine if a number is a prime number
 
-// let n = 13
 
-// console.log(
-// n > 1 &&
-//  Array.from({ length: Math.floor(Math.sqrt(n)) }, (_, i) => i + 2)
-//  .every(divisor => n % divisor !== 0)
-// );
 
 
-// Shuffle an array
 
-// let arr = [1, 2, 3, 4, 5]
 
-// console.log(
-//     arr.sort(() => Math.random() - 0.5)
-// );
 
-// Check if a year is a leap year
 
-// let year = 2001
 
-// console.log(
-//     (year % 4 === 0
-//         &&
-//     year % 100 !== 0)
-//     ||
-//     (year % 400 === 0)
-// );
 
-// Remove all whitespace from a string
 
-// let str = " hello world"
 
-// console.log(
-// str.replace(/\s/g, '')
-// );
 
-// console.log(
-// str.replace(/\s+/g, '')
-// );
 
-// Generate a range of numbers between two values
 
-// let start = 5
-// let end = 10
 
-// console.log(
-//     Array.from({ length: end - start + 1 }, (_, i) => start + i)
-// );
 
-// Rotate elements in an array to the right
 
-// let arr = [1, 2, 3, 4, 5]
-// arr.unshift(
-//     arr.pop()
-// )
-// console.log(arr);
 
-// Create an object from key-value pairs
 
-// console.log(
-//     Object.fromEntries(
-//         [
-//             ['key1', 'value1'], ['key2', 'value2'], ['key3', 'value3']
-//         ]
-//     )
-// );
 
-// Generate a random hexadecimal color code:
 
-// console.log(
 
-// `#${Math.floor(Math.random()*16777215).toString(16)}`
-// );
 
-// Calculate the sum of squared values in an array
 
-// let arr = [1, 2, 3]
 
-// console.log(
-//     arr.reduce(
-//         (sum, num) => sum + num ** 2, 0));
 
-// Count the occurrences of each element in an array
 
-// let arr = [1, 2, 3, 4, 5, 6, 5, 4, 3, 7, 8, 6, 5, 3]
 
-// console.log(
-//     arr.reduce((acc, val) => (acc[val] = (acc[val] || 0) + 1, acc), {}));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
