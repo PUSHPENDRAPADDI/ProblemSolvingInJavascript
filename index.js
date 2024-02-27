@@ -2098,7 +2098,7 @@
 // A-Z = 65 - 90
 // a-z = 97 - 122
 
-let str1 = "Hello World"
+// let str1 = "Hello World"
 
 // let result1 = ''
 
@@ -2515,17 +2515,66 @@ let str1 = "Hello World"
 
 
 
+// Merge Sort
+// Divide & Conquer
 
+// let arr = [6, 5, 3, 1, 8, 7]
 
+// function divide(arrParm, start, end) {
+//     if (start >= end) {
+//         return
+//     }
+//     let mid = start + Math.floor((end - start) / 2)
+//     divide(arrParm, start, mid)
+//     divide(arrParm, mid + 1, end)
+//     conquer(arrParm, start, mid, end)
+// }
 
+// function conquer(arrParm, start, mid, end) {
+//     let mergedArr = []
+//     let id1 = start
+//     let id2 = mid + 1
+//     let x = 0
+//     while (id1 <= mid && id2 <= end) {
+//         if (arrParm[id1] <= arrParm[id2]) {
+//             mergedArr[x++] = arrParm[id1++]
+//         } else {
+//             mergedArr[x++] = arrParm[id2++]
+//         }
+//     }
+//     while (id1 <= mid) {
+//         mergedArr[x++] = arrParm[id1++]
+//     }
+//     while (id2 <= mid) {
+//         mergedArr[x++] = arrParm[id2++]
+//     }
+//     for (let i = 0; i < mergedArr.length; i++) {
+//         arrParm[start + i] = mergedArr[i]
+//     }
+// }
 
+// divide(arr, 0, arr.length - 1)
+// console.log(arr);
 
 
 
 
+// Quick Sort
 
+// let unSorted = [3,3,2,5,8,1,6]
 
+// function quick(arr) {
+//     if(arr.length <= 1){
+//         return arr
+//     }
+//     const pivot = arr[0]
+//     const less = arr.filter(ele => ele < pivot)
+//     const greater = arr.filter(ele => ele > pivot)
+//     const equal = arr.filter(ele => ele === pivot)
+//     return quick(less).concat(equal, quick(greater))
+// }
 
+// console.log(quick(unSorted))
 
 
 
@@ -2586,6 +2635,55 @@ let str1 = "Hello World"
 
 
 
+
+
+
+
+// Merge Sort
+// Divide & Conquer
+
+
+
+// let arr = [6, 4, 3, 7, 8, 2, 1];
+
+// function divide(arrParm, start, end) {
+//     if (start >= end) {
+//         return;
+//     }
+//     let mid = start + Math.floor((end - start) / 2);
+//     divide(arrParm, start, mid);
+//     divide(arrParm, mid + 1, end);
+//     conquer(arrParm, start, mid, end);
+// }
+
+// function conquer(arrParm, start, mid, end) {
+//     let mergedArr = [];
+//     let id1 = start;
+//     let id2 = mid + 1;
+//     let x = 0;
+//     while (id1 <= mid && id2 <= end) {
+//         if (arrParm[id1] <= arrParm[id2]) {
+//             mergedArr[x++] = arrParm[id1++];
+//         } else {
+//             mergedArr[x++] = arrParm[id2++];
+//         }
+//     }
+//     while (id1 <= mid) {
+//         mergedArr[x++] = arrParm[id1++];
+//     }
+//     while (id2 <= end) {
+//         mergedArr[x++] = arrParm[id2++];
+//     }
+//     for (let i = 0; i < mergedArr.length; i++) {
+//         arrParm[start + i] = mergedArr[i];
+//     }
+// }
+
+// divide(arr, 0, arr.length - 1);
+// console.log(arr);
+
+
+// Quick Sort
 
 
 
@@ -3050,3 +3148,255 @@ let str1 = "Hello World"
 // const phon = '+011234567'
 // const regex = /^(?:[\+0-9]?)[0-9]{6,14}$/
 // console.log(regex.test(phon));
+
+
+
+// (function(a,b) {
+//     console.log("This is an apple", a + b);
+// })(1,2)
+
+
+
+// const cars = ['Jaguar', 'Lambo', 'Lexus','Porsche','Bentley','Maserati']
+
+
+// for (let i = 0; i < cars.length; i++)  console.log(cars[i])
+
+// for(let index in cars) console.log(cars[index])
+
+// for (let car of cars) console.log(car)
+
+// cars.forEach((element) => console.log(element))
+
+
+
+// const nums =[0,0,0,0,1,2,3,3,4,5,6,6,7,8,8,8,9,9,10,10,11,11]
+// const target = 0
+
+// const sttr = nums.join('')
+// debugger
+// let result = []
+
+// result[0] =sttr.indexOf(target.toString())
+// result[1] = sttr.lastIndexOf(target.toString())
+// console.log(result);
+
+
+// const str = '{'
+// const flag = []
+// for (let i = 0; i < str.length; i++) {
+//     if (str[i] === ')' || str[i] === '}' || str[i] === ']') {
+//         if ((flag[flag.length - 1] === '(' && str[i] === ')') ||
+//             flag[flag.length - 1] === '{' && str[i] === '}' ||
+//             flag[flag.length - 1] === '[' && str[i] === ']'
+//         ) {
+//             flag.pop()
+//         } else {
+//             flag.push(str[i])
+//         }
+//     } else {
+//         flag.push(str[i])
+//     }
+// }
+// console.log(flag.length === 0);
+
+// const num = ["linqmafia@leet+code.com","linqmafia@code.com"]
+
+// var numUniqueEmails = function (num) {
+//     let result = []
+//     for (let j = 0; j < num.length; j++) {
+//         const str = num[j]
+//         const num2 = str.split('@')
+//         const str2 = num2[0]
+//         const str3 = []
+//         for (let i = 0; i < str2.length; i++) {
+//             if (str2[i] === '.') {
+//                 continue
+//             } else {
+//                 if (str2[i] === '+') {
+//                     break
+//                 } else {
+//                     str3.push(str2[i])
+//                 }
+//             } if (str2[i] === '+') {
+//                 break
+//             }
+//         }
+//         if ((num2[1].lastIndexOf('.') === num2[1].indexOf('.') || num2[1].lastIndexOf('.') >= num2[1].indexOf('.'))) {
+//             result.push(str3.join('') + '@' + num2[1])
+//         }
+//     }
+//     let len = Array.from(new Set(result))
+//     return len
+// };
+
+// console.log(numUniqueEmails(num));
+
+
+// let str =''
+// let flag = false
+
+// if (flag) {
+//     str = 'if'
+// }else{
+//     str = 'else'
+// }
+// // Short Circuit
+// let username = userInput || "Guest";
+// // or
+// str = flag === true ? "if" : "else"
+// console.log(str);
+
+
+
+// let num = [1,1,2]
+
+// const array =Array.from(new Set(num))
+// for (let i = 0; i < num.length; i++) {
+//     if(num[i] === num[i+1]){
+
+//     }
+// }
+
+// console.log(array);
+// let map = new Map();
+// let j = 0
+// for (let i = 0; i < num.length; i++) {
+//     if (!map.has(num[i])) {
+//         map.set(num[i], 1)        
+//         num[j++] =num[i]
+//     }
+// }
+// console.log(num);
+// console.log(j); 
+
+// let nums = [0, 1, 2, 2, 3, 0, 4, 2]
+
+// let val = 2
+// let index = 0;
+// for (let i = 0; i < nums.length; i++) {
+//     debugger
+//     if (nums[i] != val) {
+//         nums[index] = nums[i];
+//         index++;
+//     }
+// }
+// console.log(index);
+
+// let nums = [1, 3, 5, 6]
+// let target = 5
+// let result = 0
+
+// for (let i = 0; i < nums.length; i++) {    
+//     if (nums[nums.length-1] < target) {
+//         result = nums.length
+//         break
+//     }
+//     if (nums[i] === target || nums[i] > target) {
+//         if (nums[i] === target) {
+//             result = i
+//             break
+//         } else {
+//             result = i
+//             break
+//         }
+//     }
+// }
+// console.log(result);
+
+
+
+
+// let result = []
+// for (let j = 0; j < num.length; j++) {
+//     const str = num[j]
+//     const num2 = str.split('@')
+//     const str2 = num2[0]
+//     const str3 = []
+//     for (let i = 0; i < str2.length; i++) {
+//         if (str2[i] === '.') {
+//             continue
+//         } else {
+//             if (str2[i] === '+') {
+//                 break
+//             } else {
+//                 str3.push(str2[i])
+//             }
+//         } if (str2[i] === '+') {
+//             break
+//         }
+//     }
+//     if ((num2[1].lastIndexOf('.') === num2[1].indexOf('.') || num2[1].lastIndexOf('.') >= num2[1].indexOf('.')) && num2[1].indexOf('+') === -1) {
+//         result.push(str3.join('') + '@' + num2[1])
+//     }
+// }
+// console.log(Array.from(new Set(result)));
+
+
+// function normalizeEmail(email) {
+//     const [local, domain] = email.split('@');
+//     const normalizedLocal = local.split('+')[0].replace(/\./g, '');
+//     return normalizedLocal + '@' + domain;
+// }
+
+// function countUniqueEmails(emails) {
+//     const uniqueEmails = new Set();
+//     for (const email of emails) {
+//         const normalizedEmail = normalizeEmail(email);
+//         uniqueEmails.add(normalizedEmail);
+//     }
+//     return uniqueEmails.size;
+// }
+
+// const emails = ["fg.r.u.uzj+o.pw@kziczvh.com", "r.cyo.g+d.h+b.ja@tgsg.z.com", "fg.r.u.uzj+o.f.d@kziczvh.com", "r.cyo.g+ng.r.iq@tgsg.z.com", "fg.r.u.uzj+lp.k@kziczvh.com", "r.cyo.g+n.h.e+n.g@tgsg.z.com", "fg.r.u.uzj+k+p.j@kziczvh.com", "fg.r.u.uzj+w.y+b@kziczvh.com", "r.cyo.g+x+d.c+f.t@tgsg.z.com", "r.cyo.g+x+t.y.l.i@tgsg.z.com", "r.cyo.g+brxxi@tgsg.z.com", "r.cyo.g+z+dr.k.u@tgsg.z.com", "r.cyo.g+d+l.c.n+g@tgsg.z.com", "fg.r.u.uzj+vq.o@kziczvh.com", "fg.r.u.uzj+uzq@kziczvh.com", "fg.r.u.uzj+mvz@kziczvh.com", "fg.r.u.uzj+taj@kziczvh.com", "fg.r.u.uzj+fek@kziczvh.com"];
+
+// console.log(countUniqueEmails(emails));
+
+
+// let digits = [9, 9]
+
+// let n = digits.length;
+// for (let i = n - 1; i >= 0; i--) {
+//     if (digits[i] < 9) {
+//         digits[i]++;
+//         return digits;
+//     }
+//     digits[i] = 0;
+// }
+
+// let ans = new Array(s + 1).fill(0);
+// newNumber[0] = 1;
+
+// return newNumber;
+// console.log(newNumber);
+
+
+// let nums = [2, 5, 6, 0, 0, 1, 2]
+// let target = 2
+
+// let flag = false
+// for (let n of nums) {
+//     if (n === target) {
+//         flag = true
+//         break
+//     }
+// }
+// console.log(nums.join('').indexOf(target));
+
+// let nums = [266, 267, 268, 269, 271, 278, 282, 292, 293, 298, 6, 9, 15, 19, 21, 26, 33, 35, 37, 38, 39, 46, 49, 54, 65, 71, 74, 77, 79, 82, 83, 88, 92, 93, 94, 97, 104, 108, 114, 115, 117, 122, 123, 127, 128, 129, 134, 137, 141, 142, 144, 147, 150, 154, 160, 163, 166, 169, 172, 173, 177, 180, 183, 184, 188, 198, 203, 208, 210, 214, 218, 220, 223, 224, 233, 236, 241, 243, 253, 256, 257, 262, 263]
+// console.log(nums.sort((a,b) => a-b)[0])
+
+
+// let nums1 = [1, 3]
+// let nums2 = [2]
+
+// let num3 = [...nums1, ...nums2].sort((a, b) => a - b)
+// let result = 0
+// if (num3.length % 2 === 0) {
+//     result = (num3[Math.floor(((num3.length) - 1) / 2)] + num3[Math.floor(((num3.length) - 1) / 2) + 1]) / 2
+// } else {
+//     result = num3[Math.floor(((num3.length) - 1) / 2)]
+// }
+// console.log(result);
+
+

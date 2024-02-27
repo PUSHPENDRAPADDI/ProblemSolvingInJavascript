@@ -7,6 +7,12 @@
 // const num = [1,2,3,4,5]
 
 // num.push(1, 3,3,4,5,6)
+// num.push(1, 3,3,4,5,6)
+// num.push(1, 3,3,4,5,6)
+// num.push(1, 3,3,4,5,6)
+// num.push(1, 3,3,4,5,6)
+// num.push(1, 3,3,4,5,6)
+
 
 // console.log(num);
 
@@ -14,16 +20,12 @@
 // Unshift()
 
 
-// let arr = [1,2,3,4,5,6]
 
+// let arr = [1,2,3,4,5,6]
 // arr.unshift(7,8,9)
-
-// console.log(arr);
-
-
 // Pop
-
 // let arr = [1,2,3,4,5,6]
+// console.log(arr);
 
 // arr.pop()
 
@@ -639,3 +641,36 @@
 
 // console.log(
 //     arr.reduce((acc, val) => (acc[val] = (acc[val] || 0) + 1, acc), {}));
+
+// var, let , const 
+
+// let a = 10
+
+// == & === 
+
+// console.log(
+//     2 === '2'
+// );
+
+
+
+
+
+
+
+let a = "boy is a good boy and boy are not already good boy  boy"
+
+let arr = a.split(" ");
+let count = 0
+for (let i = 0; i < arr.length; i++) {
+    let countin = 1;
+    for (let j = i + 1; j < arr.length; j++) {
+        if (arr[i] === arr[j]) {
+            countin++;
+        }
+    }
+    if (count < countin) {
+        count = countin
+    }
+}
+console.log(count);
