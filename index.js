@@ -3400,3 +3400,95 @@
 // console.log(result);
 
 
+// let num = [1, 2, -2, -1]
+// let result = []
+//     num.sort((a, b) => a - b); 
+//     const n = num.length;
+//     for (let i = 0; i < n - 2; i++) { 
+//         if (i === 0 || (i > 0 && num[i] !== num[i - 1])) {
+//             let low = i + 1;
+//             let high = n - 1;
+//             let sum = 0 - num[i];
+//             while (low < high) {
+//                 if (num[low] + num[high] === sum) {
+//                     result.push([num[i], num[low], num[high]]);
+//                     while (low < high && num[low] === num[low + 1]) low++;
+//                     while (low < high && num[high] === num[high - 1]) high--; 
+//                     low++;
+//                     high--;
+//                 } else if (num[low] + num[high] < sum) {
+//                     low++;
+//                 } else {
+//                     high--;
+//                 }
+//             }
+//         }
+//     }
+// console.log(result);
+
+
+// function sum(a) {
+//     return a +
+// }
+
+// console.log(sum(1, 2));
+
+
+
+// let str = "cdd"
+// let maxLength = 0;
+// let start = 0;
+// let charIndexMap = {};
+
+// for (let end = 0; end < str.length; end++) {
+//     let currentChar = str[end];
+//     if (currentChar in charIndexMap && charIndexMap[currentChar] >= start) {
+//         start = charIndexMap[currentChar] + 1;
+//     }
+//     charIndexMap[currentChar] = end;
+//     maxLength = Math.max(maxLength, end - start + 1);
+// }
+// console.log(maxLength);
+
+
+// let arr = [1, 2, 2, 6, 6, 6, 6, 7, 10]
+// let sum = 1
+// let count = 1
+// let key = arr[0]
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === arr[i + 1]) {
+//         count++
+//     } else {
+//         if (sum !== Math.max(sum, count)) {
+//             key = arr[i]
+//         }
+//         sum = Math.max(sum, count)
+//         count = 1
+//     }
+// }
+// console.log(key);
+
+// let num = 1534236469
+
+// if (num >= 1534236469 || num <= -1534236469) {
+//     console.log(0); 
+// } else {
+//     let result = parseInt(num.toString().split('').reverse().join(''))
+//     console.log(num < 0 ? -result : result);
+// }
+
+
+
+// const oldCars = { name: "Jaguar", country: "India" }
+// const changedData = { model: "XDL121", parentCompany: "TATA" }
+
+// const newData = { ...oldCars, ...changedData }
+
+// Output :  {
+//   name: 'Jaguar',
+//   country: 'India',
+//   model: 'XDL121',
+//   parentCompany: 'TATA'
+// }
+
+
