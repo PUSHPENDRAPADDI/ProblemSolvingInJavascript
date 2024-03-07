@@ -3492,3 +3492,110 @@
 // }
 
 
+// let str = "baaaab"
+// let result = ""
+// for (let s of str) {    
+//     if (str.indexOf(s) !== str.lastIndexOf(s)) {
+//         let temp = str.slice(str.indexOf(s), str.lastIndexOf(s) + 1)
+//         if (result.length < temp.length && temp === temp.split('').reverse().join('')) {
+//             result = temp
+//         }
+//     }
+// }
+
+let s = "3.14159"
+// let temp = s.trim()
+// let result = ''
+// if (temp[0] === '-' || /[0-9]/.test(temp[0])) {
+//     result = temp.replace(/[^0-9-.]/g, "");
+// } else {
+//     result = 0
+// }
+// console.log(Math.floor(Math.max(Math.min(result, Math.pow(2, 31) - 1), -Math.pow(2, 31))));
+
+
+
+// s = s.trim();
+// if (s.length === 0) {
+//     console.log(0);
+// }
+// let num = 0;
+// let i = 0;
+// let sign = 1;
+// if (s[i] === '+') {
+//     i++;
+// } else if (s[i] === '-') {
+//     i++;
+//     sign = -1;
+// }
+// while (i < s.length && /^\d$/.test(s[i])) {
+//     num = num * 10 + parseInt(s[i]);
+//     i++;
+// }
+// num *= sign;
+// num = Math.max(Math.min(num, Math.pow(2, 31) - 1), -Math.pow(2, 31));
+// console.log(num);
+
+
+// const arrayOfObjects = [
+//     { id: 1, name: 'Alice' },
+//     { id: 2, name: 'Bob' },
+//     { id: 3, name: 'Charlie' },
+//     { id: 4, name: 'David' }
+// ];
+// const swapIndex = arrayOfObjects.findIndex(obj => obj.id === 4);
+// let [swappedObject] = arrayOfObjects.splice(swapIndex, 1);
+// swappedObject["index"] = 3
+// arrayOfObjects.unshift(swappedObject);
+
+// const arrayOfObjects =
+// [
+//     { id: 3, name: 'David', index: 2 },
+//     { id: 1, name: 'Alice' },
+//     { id: 2, name: 'Bob' },
+//     { id: 4, name: 'Charlie' }
+//   ]
+
+
+// const swapIndex = arrayOfObjects.findIndex(obj => obj.id === 3);
+// let [swappedObject] = arrayOfObjects.splice(swapIndex, 1);
+// arrayOfObjects.splice(swappedObject?.index, 0, swappedObject);
+// console.log(arrayOfObjects);
+
+
+// let matrix = [[1]]
+// console.log(matrix.flat(Infinity).indexOf(1) > 0);
+// console.log(matrix.flat(Infinity));
+
+// for (let i = 0; i < 3; i++) {
+//     setTimeout(() => {
+//         console.log(i);
+//     }, 1000)
+// }
+// for (var i = 0; i < 3; i++) {
+//     setTimeout(() => {
+//         console.log(i);
+//     }, 1000)
+// }
+
+// let nums = [-2, 3, -4]
+// let sum = 0
+
+// for (let i = 0; i < nums.length; i++) {
+//     let count = nums[i] === 0 ? 1 : nums[i]
+//     for (let j = i + 1; j < nums.length; j++) {
+//         if (count * nums[j] > sum) {
+//             count *= nums[j]
+//             sum = count
+//         } else {
+//             break
+//         }
+//     }
+// }
+// console.log(Math.max(sum, Math.max(...nums)));
+
+
+// let haystack = "sdfsadbutsad";
+// let needle = "sad"
+
+// console.log(haystack.indexOf(needle));
