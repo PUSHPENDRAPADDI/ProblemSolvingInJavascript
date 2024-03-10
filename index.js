@@ -3592,10 +3592,40 @@ let s = "3.14159"
 //         }
 //     }
 // }
-// console.log(Math.max(sum, Math.max(...nums)));
+// console.log(Math.maxvbbb (sum, Math.max(...nums)));
 
 
 // let haystack = "sdfsadbutsad";
 // let needle = "sad"
 
 // console.log(haystack.indexOf(needle));
+
+// const list1 = [1, 2, 4]
+// const list2 = [1, 3, 4]
+// for (const iterator of list2) {
+//     list1.push(iterator)
+// }
+// console.log(list1.sort());
+
+
+
+// let str = "hjsabcba"
+// let i = 0
+// while (i < str.length) {
+//     console.log(str.slice(str.indexOf(str[i]), str.lastIndexOf(str[i]) + 1).length === str.length - 2)
+//     i++
+// }
+
+
+// let arr = []
+// let size = 1
+// let count = 0
+// let result = []
+// while (arr.length > 0) {
+//     if (size <= arr.length) {
+//         result.push(arr.splice(count, size))
+//     } else {
+//         result.push(arr.splice(count, arr.length))
+//     }
+// }
+// console.log(result);
