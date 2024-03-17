@@ -3503,7 +3503,7 @@
 //     }
 // }
 
-let s = "3.14159"
+// let s = "3.14159"
 // let temp = s.trim()
 // let result = ''
 // if (temp[0] === '-' || /[0-9]/.test(temp[0])) {
@@ -3629,3 +3629,183 @@ let s = "3.14159"
 //     }
 // }
 // console.log(result);
+
+// let str = "   fly me   to   the moon  "
+// let arr = str.trim().split(" ")
+// console.log(arr[arr.length-1].length);
+
+
+
+// const isPalindrome = str => str === str.split("").reverse().join('');
+
+// console.log(isPalindrome('aba'));
+
+// true
+
+
+// let num = [-1, 0]
+// let target = -1
+// let result = []
+// let map = new Map()
+// for (const i in num) {
+//     if (!map.has(target - num[i])) {
+//         map.set(num[i], i)
+//     } else {
+//         result.push(+map.get(target - num[i])+1, +i+1);
+//     }
+// }
+// console.log(result);
+
+
+// let str = 'aa';
+// let maxLen = '';
+
+// if (str.length === 0) {
+//     maxLen = '';
+// } else if (str.length === 1) {
+//     maxLen = str;
+// } else {
+//     for (let i = 0; i < str.length; i++) {
+//         for (let j = i; j < str.length; j++) {
+//             if (isPalindrome(str, i, j) && maxLen.length < j - i + 1) {
+//                 maxLen = str.substring(i, j + 1);
+//             }
+//         }
+//     }
+// }
+
+// console.log(maxLen);
+
+// function isPalindrome(str, start, end) {
+//     while (start < end) {
+//         if (str[start] !== str[end]) {
+//             return false;
+//         }
+//         start++;
+//         end--;
+//     }
+//     return true;
+// }
+
+
+// let nums = [-1, 1, 0, -3, 3]
+// let leftProd = []
+// let rightProd = []
+
+// leftProd[0] = 1
+// for (let i = 1; i < nums.length; i++) {
+//     leftProd[i] = leftProd[i - 1] * nums[i - 1]
+// }
+// rightProd[nums.length - 1] = 1
+// for (let i = nums.length - 2; i > -1; i--) {
+//     rightProd[i] = rightProd[i + 1] * nums[i + 1]
+// }
+// let allProd = []
+// for (let i = 0; i < nums.length; i++) {
+//     allProd.push(leftProd[i] * rightProd[i])
+// }
+// console.log(allProd);
+
+
+// Linked List
+
+// class Node {
+//     constructor(data) {
+//         this.data = data;
+//         this.next = null;
+//     }
+// }
+
+// class LinkedList {
+//     constructor() {
+//         this.head = null
+//     }
+//     addFirst(data) {
+//         const newNode = new Node(data)
+//         newNode.next = this.head
+//         this.head = newNode;
+//     }
+//     addLast(data) {
+//         const newNode = new Node(data)
+//         if (!this.head) {
+//             this.head = newNode;
+//             return
+//         }
+//         let current = this.head;
+//         while (current.next) {
+//             current = current.next;
+//         }
+//         current.next = newNode
+//     }
+//     size() {
+//         let count = 0
+//         let current = this.head;
+//         while (current) {
+//             count++
+//             current = current.next
+//         }
+//         return count
+//     }
+//     addAt(index, data) {
+//         if (index < 0 || index > this.size()) {
+//             console.log("Invalid index");
+//             return;
+//         }
+//         const newNode = new Node(data);
+//         if (index === 0) {
+//             newNode.next = this.head;
+//             this.head = newNode
+//             return
+//         }
+//         let current = this.head
+//         for (let i = 0; i < index - 1; i++) {
+//             current = current.next
+//         }
+//         newNode.next = current.next
+//         current.next = newNode;
+//     }
+//     removeTop() {
+//         if (!this.head) {
+//             return
+//         }
+//         this.head = this.head.next
+//     }
+//     removeLast() {
+//         if (!this.head) {
+//             return
+//         }
+//         let current = this.head
+//         while (current.next.next) {
+//             current = current.next
+//         }
+//         current.next = null
+//     }
+//     print() {
+//         let current = this.head;
+//         while (current) {
+//             console.log(current.data);
+//             current = current.next
+//         }
+//     }
+// }
+
+// const linkedList = new LinkedList()
+
+// linkedList.addFirst(1)
+// linkedList.addFirst(2)
+// linkedList.addFirst(3)
+// linkedList.addFirst(4)
+// linkedList.addFirst(5)
+// linkedList.addFirst(6)
+// linkedList.addFirst(6)
+// linkedList.print()
+
+
+const n1 = {
+    data: 100
+}
+const n2 = {
+    data: 200
+}
+n1.next = n2
+console.log(n1)
