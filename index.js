@@ -110,9 +110,6 @@
 
 
 
-
-
-
 // const array = [1,2,3,2,1,4,3,2,3,4,5]
 // const visit = []
 // for (let i = 0; i < array.length; i++) {
@@ -2204,7 +2201,7 @@
 
 // console.log(decimalNumber);
 
-// Second approach 
+// Second approach
 
 // var decimal = parseInt(binaryNumber, 2)
 // console.log(decimal);
@@ -2492,7 +2489,7 @@
 //             arr[i] =arr[j]
 //             arr[j] = temp
 //         }
-//     } 
+//     }
 // }
 
 // console.log(arr);
@@ -3263,12 +3260,12 @@
 // let j = 0
 // for (let i = 0; i < num.length; i++) {
 //     if (!map.has(num[i])) {
-//         map.set(num[i], 1)        
+//         map.set(num[i], 1)
 //         num[j++] =num[i]
 //     }
 // }
 // console.log(num);
-// console.log(j); 
+// console.log(j);
 
 // let nums = [0, 1, 2, 2, 3, 0, 4, 2]
 
@@ -3287,7 +3284,7 @@
 // let target = 5
 // let result = 0
 
-// for (let i = 0; i < nums.length; i++) {    
+// for (let i = 0; i < nums.length; i++) {
 //     if (nums[nums.length-1] < target) {
 //         result = nums.length
 //         break
@@ -3402,9 +3399,9 @@
 
 // let num = [1, 2, -2, -1]
 // let result = []
-//     num.sort((a, b) => a - b); 
+//     num.sort((a, b) => a - b);
 //     const n = num.length;
-//     for (let i = 0; i < n - 2; i++) { 
+//     for (let i = 0; i < n - 2; i++) {
 //         if (i === 0 || (i > 0 && num[i] !== num[i - 1])) {
 //             let low = i + 1;
 //             let high = n - 1;
@@ -3413,7 +3410,7 @@
 //                 if (num[low] + num[high] === sum) {
 //                     result.push([num[i], num[low], num[high]]);
 //                     while (low < high && num[low] === num[low + 1]) low++;
-//                     while (low < high && num[high] === num[high - 1]) high--; 
+//                     while (low < high && num[high] === num[high - 1]) high--;
 //                     low++;
 //                     high--;
 //                 } else if (num[low] + num[high] < sum) {
@@ -3471,7 +3468,7 @@
 // let num = 1534236469
 
 // if (num >= 1534236469 || num <= -1534236469) {
-//     console.log(0); 
+//     console.log(0);
 // } else {
 //     let result = parseInt(num.toString().split('').reverse().join(''))
 //     console.log(num < 0 ? -result : result);
@@ -3494,7 +3491,7 @@
 
 // let str = "baaaab"
 // let result = ""
-// for (let s of str) {    
+// for (let s of str) {
 //     if (str.indexOf(s) !== str.lastIndexOf(s)) {
 //         let temp = str.slice(str.indexOf(s), str.lastIndexOf(s) + 1)
 //         if (result.length < temp.length && temp === temp.split('').reverse().join('')) {
@@ -3801,11 +3798,209 @@
 // linkedList.print()
 
 
-const n1 = {
-    data: 100
-}
-const n2 = {
-    data: 200
-}
-n1.next = n2
-console.log(n1)
+
+
+
+
+
+// const n1 = {
+//     data: 100
+// }
+// const n2 = {
+//     data: 200
+// }
+// n1.next = n2
+// console.log(n1)
+
+
+
+// function mergeTwoLists(l1, l2) {
+//     debugger
+//     let dummy = new ListNode(-1);
+//     let current = dummy;
+
+//     while (l1 !== null && l2 !== null) {
+//         if (l1.val < l2.val) {
+//             current.next = l1;
+//             l1 = l1.next;
+//         } else {
+//             current.next = l2;
+//             l2 = l2.next;
+//         }
+//         current = current.next;
+//     }
+
+//     // If any list is not fully traversed, append the rest
+//     if (l1 !== null) {
+//         current.next = l1;
+//     } else {
+//         current.next = l2;
+//     }
+
+//     return dummy.next;
+// }
+
+// // Example usage:
+// const list1 = new ListNode(1);
+// list1.next = new ListNode(2);
+// list1.next.next = new ListNode(4);
+
+// const list2 = new ListNode(1);
+// list2.next = new ListNode(3);
+// list2.next.next = new ListNode(7);
+
+// const mergedList = mergeTwoLists(list1, list2);
+// console.log(mergedList); // Output: ListNode { val: 1, next: ListNode { val: 1, next: ListNode { val: 2, next: [ListNode] } } }
+
+
+// Find Words Containing Character
+
+// let words = ["abc", "bcd", "aaaa", "cbc"]
+// let x = "a"
+// let temp = []
+
+// for (let i in words) {
+//     if (words[i].includes(x)) {
+//         temp.push(i)
+//     }
+// }
+// console.log(temp);
+
+
+
+// class ListNode {
+//     constructor(val, next = null) {
+//         this.val = val;
+//         this.next = next;
+//     }
+// }
+
+// const deleteDuplicates = function (head) {
+//     if (!head || !head.next) {
+//         return head;
+//     }
+//     const dummy = new ListNode(-1);
+//     dummy.next = head;
+//     let prev = dummy;
+//     let curr = head;
+//     while (curr && curr.next) {
+//         if (curr.val === curr.next.val) {
+//             while (curr.next && curr.val === curr.next.val) {
+//                 curr = curr.next;
+//             }
+//             prev.next = curr.next;
+//         } else {
+//             prev = prev.next;
+//         }
+//         curr = curr.next;
+//     }
+//     return dummy.next;
+// };
+
+// const head = new ListNode(1);
+// head.next = new ListNode(2);
+// head.next.next = new ListNode(3);
+// head.next.next.next = new ListNode(3);
+// head.next.next.next.next = new ListNode(4);
+// head.next.next.next.next.next = new ListNode(4);
+// head.next.next.next.next.next.next = new ListNode(5);
+// head.next.next.next.next.next.next.next = new ListNode(15);
+
+// console.log("Linked list after removing duplicates:");
+// let result = deleteDuplicates(head)
+// let current = result;
+// while (current) {
+//     console.log(current.val);
+//     current = current.next;
+// }
+
+// const letterCombinations = function(digits) {
+//     if (digits.length === 0) return [];
+
+//     const digitMap = {
+//         '2': 'abc',
+//         '3': 'def',
+//         '4': 'ghi',
+//         '5': 'jkl',
+//         '6': 'mno',
+//         '7': 'pqrs',
+//         '8': 'tuv',
+//         '9': 'wxyz'
+//     };
+
+//     const combinations = [''];
+//     debugger
+//     for (const digit of digits) {
+//         const letters = digitMap[digit];
+//         const newCombinations = [];
+
+//         for (const combination of combinations) {
+//             for (const letter of letters) {
+//                 newCombinations.push(combination + letter);
+//             }
+//         }
+
+//         combinations.splice(0, combinations.length, ...newCombinations);
+//     }
+
+//     return combinations;
+// };
+
+// Example usage:
+// const digits = "23";
+// console.log(letterCombinations(digits)); // Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+
+
+
+
+// let nums = [1, 2, 3, 1]
+// let k = 2
+// let flag = false
+// const numIndices = {};
+// for (let i = 0; i < nums.length; i++) {
+//     const num = nums[i];
+//     if (num in numIndices && i - numIndices[num] <= k) {
+//         flag = true;
+//     }
+//     numIndices[num] = i;
+// }
+// console.log(flag);
+
+
+
+
+// let dividend = -1
+// let divisor = -1
+// let flag = divisor > 0 ? true : false
+// let divFlag = dividend > 0 ? true : false
+// let temp = Math.abs(dividend)
+// let divtemp = Math.abs(divisor);
+// let count = 0
+// while (temp - divtemp >= 0) {
+//     temp -= divtemp
+//     count++
+// }
+// if ((flag && divFlag) || (!flag && !divFlag)) {
+//     console.log(count);
+// } else {
+//     console.log(-count);
+// }
+
+
+// Roman to integer
+
+var intToRoman = function (num) {
+    let result = '';
+    let roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+    let value = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    for(let i = 0; num > 0; ++i){
+        debugger
+        while(num >= value[i]){
+            result += roman[i]
+            num -= value[i]
+        }
+    }
+    return result
+};
+
+console.log(intToRoman(15));
